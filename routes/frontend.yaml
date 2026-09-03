@@ -1,0 +1,14 @@
+schema_version: 1
+route: frontend
+purpose: "Research frontend framework, ecosystem, migration, and application architecture."
+catalog_sources:
+  - id: developer-roadmap
+  - id: realworld
+  - id: awesome-react
+  - id: awesome-vue
+  - id: bulletproof-react
+also_research:
+  - candidate_framework_official_documentation
+  - candidate_framework_migration_guides
+  - mature_projects_similar_to_target_product
+note: "Research navigation only; catalog membership does not imply suitability."
