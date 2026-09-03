@@ -20,6 +20,8 @@ Task Classification
 结论 + 关键来源 + 验证
 ```
 
+重大判断区分三类证据：官方/规范说明“它是什么、正式支持什么”，成熟实现/生产案例说明“真实环境里怎么用”，当前项目证据决定“是否适合这里”。Star 只作为社区采用与 field-validation 信号。
+
 ## Structure
 
 - [AGENTS.md](AGENTS.md)
