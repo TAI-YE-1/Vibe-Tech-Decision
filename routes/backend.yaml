@@ -1,0 +1,15 @@
+schema_version: 1
+route: backend
+purpose: "Research backend languages, frameworks, libraries, and engineering practices."
+catalog_sources:
+  - id: awesome-python
+  - id: awesome-nodejs
+  - id: awesome-go
+  - id: awesome-rust
+  - id: node-best-practices
+  - id: developer-roadmap
+also_research:
+  - candidate_language_or_framework_official_documentation
+  - candidate_repository_maintenance_and_release_history
+  - mature_projects_with_similar_workload
+note: "Ecosystem lists discover candidates; they do not select dependencies."
