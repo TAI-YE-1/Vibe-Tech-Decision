@@ -2,7 +2,7 @@ schema_version: 2
 verified_at: "2026-09-03"
 
 policy:
-  purpose: "Provide useful research starting points without constraining model autonomy."
+  purpose: "Provide a small set of durable research entry points without constraining model autonomy."
 
   market_validation_heuristic:
     high: "GitHub stars >= 30000"
@@ -21,15 +21,15 @@ policy:
     project_evidence: "The target project's code, measurements, constraints, and authority determine local fit."
 
   rules:
+    - "Keep only durable, broadly reusable research entry points in this catalog."
+    - "Find specific technologies, frameworks, products, benchmarks, and comparable implementations dynamically for the current problem."
     - "Use current primary sources when current technology status materially affects the conclusion."
     - "Use field evidence when real-world adoption, maintainability, operational behavior, or long-term feasibility matters."
     - "Authority evidence, field evidence, and project evidence are complementary; none automatically proves the final technology choice."
     - "GitHub stars and popularity are field-validation signals for community projects, not authority scores."
     - "Discovery sources may find candidates but do not alone prove project fit."
-    - "Implementation and production cases show patterns or feasibility; scenario fit still needs judgment."
     - "Do not present inherited_external or model_knowledge as fresh_external."
     - "External evidence that materially supports a major conclusion should be visible to the user."
-    - "Sources outside this catalog may be used when they are more direct, current, or relevant."
 
 sources:
   - id: awesome
@@ -38,10 +38,10 @@ sources:
     categories: [discovery]
     authority: community
     market_validation: high
-    stars_at_verification: 502491
+    stars_at_verification: 502599
     last_repo_activity_at: "2026-09-02"
     evidence_role: discovery
-    use_for: "Discover mature topic-specific Awesome lists."
+    use_for: "Discover domain-specific curated lists and candidate ecosystems."
     limitations: "Not architecture evidence by itself."
 
   - id: public-apis
@@ -50,11 +50,11 @@ sources:
     categories: [build_vs_buy, api_discovery]
     authority: community
     market_validation: high
-    stars_at_verification: 474714
+    stars_at_verification: 474825
     last_repo_activity_at: "2026-09-02"
     evidence_role: discovery
     use_for: "Discover existing public APIs."
-    limitations: "Individual API reliability, security and pricing require primary-source verification."
+    limitations: "Individual API reliability, security, support, and pricing require primary-source verification."
 
   - id: awesome-selfhosted
     repo: awesome-selfhosted/awesome-selfhosted
@@ -62,35 +62,11 @@ sources:
     categories: [build_vs_buy, self_hosted]
     authority: community
     market_validation: high
-    stars_at_verification: 316821
+    stars_at_verification: 316903
     last_repo_activity_at: "2026-09-02"
     evidence_role: discovery
-    use_for: "Discover mature self-hosted software that may solve a product need."
+    use_for: "Discover mature self-hosted software that may satisfy an existing need."
     limitations: "Listing does not imply production fit for a specific workload."
-
-  - id: free-for-dev
-    repo: ripienaar/free-for-dev
-    url: https://github.com/ripienaar/free-for-dev
-    categories: [build_vs_buy, managed_services]
-    authority: community
-    market_validation: high
-    stars_at_verification: 136390
-    last_repo_activity_at: "2026-09-02"
-    evidence_role: discovery
-    use_for: "Discover SaaS/PaaS/IaaS options."
-    limitations: "Pricing, SLA and product details must be checked with the vendor."
-
-  - id: developer-roadmap
-    repo: nilbuild/developer-roadmap
-    url: https://github.com/nilbuild/developer-roadmap
-    categories: [technology_map, learning, architecture]
-    authority: community
-    market_validation: high
-    stars_at_verification: 366190
-    last_repo_activity_at: "2026-09-01"
-    evidence_role: concept_map
-    use_for: "Map unfamiliar technology areas and identify concepts for deeper research."
-    limitations: "Not a project-specific architecture authority."
 
   - id: system-design-primer
     repo: donnemartin/system-design-primer
@@ -98,23 +74,11 @@ sources:
     categories: [system_design, tradeoffs]
     authority: community
     market_validation: high
-    stars_at_verification: 367586
+    stars_at_verification: 367638
     last_repo_activity_at: "2026-03-20"
     evidence_role: tradeoff_reference
-    use_for: "Understand common system-design concepts and trade-offs."
+    use_for: "Orient system-design trade-offs before deeper primary-source research."
     limitations: "Interview-oriented material should not be copied directly into production."
-
-  - id: system-design-101
-    repo: ByteByteGoHq/system-design-101
-    url: https://github.com/ByteByteGoHq/system-design-101
-    categories: [system_design, comparisons]
-    authority: community
-    market_validation: high
-    stars_at_verification: 88041
-    last_repo_activity_at: "2025-04-04"
-    evidence_role: comparison_reference
-    use_for: "Quickly compare adjacent technologies and patterns."
-    limitations: "Protocol/vendor behavior still requires primary documentation."
 
   - id: awesome-scalability
     repo: binhnguyennus/awesome-scalability
@@ -122,193 +86,11 @@ sources:
     categories: [production_patterns, scalability]
     authority: community
     market_validation: high
-    stars_at_verification: 73688
+    stars_at_verification: 73696
     last_repo_activity_at: "2026-01-04"
     evidence_role: case_study_index
     use_for: "Find production architecture and scalability case studies."
-    limitations: "Scenario equivalence must be checked before applying big-company patterns."
-
-  - id: system-design
-    repo: karanpratapsingh/system-design
-    url: https://github.com/karanpratapsingh/system-design
-    categories: [system_design, cross_check]
-    authority: community
-    market_validation: high
-    stars_at_verification: 45915
-    last_repo_activity_at: "2026-07-08"
-    evidence_role: cross_check
-    use_for: "Cross-check system-design concepts."
-    limitations: "Not a substitute for technology-specific primary sources."
-
-  - id: realworld
-    repo: realworld-apps/realworld
-    url: https://github.com/realworld-apps/realworld
-    categories: [framework_comparison, reference_implementation]
-    authority: community
-    market_validation: high
-    stars_at_verification: 84182
-    last_repo_activity_at: "2026-08-26"
-    evidence_role: reference_implementation
-    use_for: "Compare different stacks implementing an equivalent non-trivial product."
-    limitations: "Demo architecture may not match domain-specific or high-scale requirements."
-
-  - id: owasp-cheat-sheet-series
-    repo: OWASP/CheatSheetSeries
-    url: https://github.com/OWASP/CheatSheetSeries
-    categories: [security]
-    authority: official_foundation
-    market_validation: high
-    stars_at_verification: 33055
-    last_repo_activity_at: "2026-09-02"
-    evidence_role: primary_guidance
-    use_for: "Application-security design and implementation guidance."
-    limitations: "Does not replace project-specific threat modeling."
-
-  - id: awesome-python
-    repo: vinta/awesome-python
-    url: https://github.com/vinta/awesome-python
-    categories: [python, ecosystem_discovery]
-    authority: community
-    market_validation: high
-    stars_at_verification: 317850
-    last_repo_activity_at: "2026-09-01"
-    evidence_role: ecosystem_discovery
-    use_for: "Discover mature Python libraries by capability."
-    limitations: "A listed library still requires direct evaluation."
-
-  - id: awesome-system-design
-    repo: madd86/awesome-system-design
-    url: https://github.com/madd86/awesome-system-design
-    categories: [system_design, distributed_systems, discovery]
-    authority: community
-    market_validation: medium
-    stars_at_verification: 12442
-    last_repo_activity_at: "2026-02-27"
-    evidence_role: secondary_cross_check
-    use_for: "Find additional distributed-systems material."
-    limitations: "Secondary index; use more direct sources for major decisions."
-
-  - id: awesome-nodejs
-    repo: sindresorhus/awesome-nodejs
-    url: https://github.com/sindresorhus/awesome-nodejs
-    categories: [nodejs, ecosystem_discovery]
-    authority: community
-    market_validation: high
-    stars_at_verification: 66690
-    last_repo_activity_at: "2026-09-02"
-    evidence_role: ecosystem_discovery
-    use_for: "Discover mature Node.js packages and resources."
-    limitations: "List membership does not establish project fit."
-
-  - id: awesome-go
-    repo: avelino/awesome-go
-    url: https://github.com/avelino/awesome-go
-    categories: [go, ecosystem_discovery]
-    authority: community
-    market_validation: high
-    stars_at_verification: 183017
-    last_repo_activity_at: "2026-09-02"
-    evidence_role: ecosystem_discovery
-    use_for: "Discover Go libraries, frameworks and tools."
-    limitations: "Candidate projects require direct maintenance/API/production-fit checks."
-
-  - id: awesome-react
-    repo: enaqx/awesome-react
-    url: https://github.com/enaqx/awesome-react
-    categories: [react, ecosystem_discovery]
-    authority: community
-    market_validation: high
-    stars_at_verification: 74470
-    last_repo_activity_at: "2026-08-20"
-    evidence_role: ecosystem_discovery
-    use_for: "Map the React ecosystem and discover candidate libraries."
-    limitations: "Does not prove React or any listed library fits the target project."
-
-  - id: awesome-vue
-    repo: vuejs/awesome-vue
-    url: https://github.com/vuejs/awesome-vue
-    categories: [vue, ecosystem_discovery]
-    authority: project_organization
-    market_validation: high
-    stars_at_verification: 73548
-    last_repo_activity_at: "2026-07-24"
-    evidence_role: ecosystem_discovery
-    use_for: "Map the Vue ecosystem and discover candidate libraries."
-    limitations: "Does not establish project-specific framework or dependency fit."
-
-  - id: awesome-rust
-    repo: rust-unofficial/awesome-rust
-    url: https://github.com/rust-unofficial/awesome-rust
-    categories: [rust, ecosystem_discovery]
-    authority: community
-    market_validation: high
-    stars_at_verification: 59140
-    last_repo_activity_at: "2026-09-02"
-    evidence_role: ecosystem_discovery
-    use_for: "Discover Rust crates, libraries, applications and resources."
-    limitations: "Popularity does not establish suitability."
-
-  - id: node-best-practices
-    repo: goldbergyoni/nodebestpractices
-    url: https://github.com/goldbergyoni/nodebestpractices
-    categories: [nodejs, engineering_practices]
-    authority: community
-    market_validation: high
-    stars_at_verification: 105601
-    last_repo_activity_at: "2026-06-15"
-    evidence_role: practice_reference
-    use_for: "Cross-check Node.js production engineering practices."
-    limitations: "Practices should be adapted to project size and constraints."
-
-  - id: bulletproof-react
-    repo: alan2207/bulletproof-react
-    url: https://github.com/alan2207/bulletproof-react
-    categories: [react, frontend_architecture]
-    authority: community
-    market_validation: high
-    stars_at_verification: 35788
-    last_repo_activity_at: "2026-05-14"
-    evidence_role: reference_implementation
-    use_for: "Study one mature, opinionated React application structure."
-    limitations: "Not a mandatory architecture and not evidence that an existing frontend should be rewritten."
-
-  - id: cncf-landscape
-    repo: cncf/landscape
-    url: https://github.com/cncf/landscape
-    primary_url: https://landscape.cncf.io/
-    categories: [cloud_native, ecosystem_discovery, infrastructure]
-    authority: official_foundation
-    market_validation: low
-    stars_at_verification: 9985
-    last_repo_activity_at: "2026-09-02"
-    evidence_role: official_ecosystem_map
-    use_for: "Understand the cloud-native ecosystem and project metadata from CNCF."
-    limitations: "Being listed does not imply a technology is needed or suitable."
-
-  - id: thoughtworks-technology-radar
-    repo: null
-    url: https://www.thoughtworks.com/radar
-    categories: [technology_radar, maturity, methodology]
-    authority: official_vendor_methodology
-    market_validation: not_applicable
-    stars_at_verification: null
-    last_repo_activity_at: null
-    evidence_role: methodology_reference
-    use_for: "Understand Adopt/Trial/Assess/Hold as a technology portfolio method and review Thoughtworks observations."
-    limitations: "Ring assignments are contextual observations, not universal recommendations."
-
-  - id: thoughtworks-build-your-own-radar
-    repo: thoughtworks/build-your-own-radar
-    url: https://github.com/thoughtworks/build-your-own-radar
-    categories: [technology_radar, tooling]
-    authority: official_vendor
-    market_validation: low
-    stars_at_verification: 2563
-    last_repo_activity_at: "2026-04-22"
-    evidence_role: tooling_reference
-    use_for: "Implement a technology-radar visualization if needed."
-    limitations: "Tooling only; not technology-selection evidence."
-
+    limitations: "Scenario equivalence must be checked before applying large-scale patterns."
 
   - id: rfc-editor
     repo: null
@@ -331,7 +113,7 @@ sources:
     stars_at_verification: 9380
     last_repo_activity_at: "2026-09-03"
     evidence_role: specification
-    use_for: "HTML, browser navigation, loading, storage, workers, and web application platform semantics."
+    use_for: "HTML and web application platform semantics."
     limitations: "Defines platform behavior; does not choose an application framework."
 
   - id: mdn-web-docs
@@ -353,10 +135,10 @@ sources:
     authority: official_standard_body
     market_validation: low
     stars_at_verification: 113
-    last_repo_activity_at: "2026-07-15"
+    last_repo_activity_at: "2026-03-24"
     evidence_role: measurement_specification
     use_for: "Web performance measurement APIs and timing standards."
-    limitations: "Measurement standards identify what can be measured; they do not diagnose a target project by themselves."
+    limitations: "Measurement standards do not diagnose a target project by themselves."
 
   - id: google-sre-books
     repo: google/googlesre
@@ -377,22 +159,22 @@ sources:
     authority: official_project_specification
     market_validation: low
     stars_at_verification: 4336
-    last_repo_activity_at: "2026-09-03"
+    last_repo_activity_at: "2026-09-01"
     evidence_role: specification
     use_for: "Cross-language telemetry, traces, metrics, logs, semantic conventions, and OTLP."
     limitations: "Specification support does not prove a particular observability stack is needed."
 
-  - id: nist-ssdf
-    repo: null
-    url: https://csrc.nist.gov/pubs/sp/800/218/final
-    categories: [security, software_supply_chain, engineering_practices]
-    authority: government_standard_guidance
-    market_validation: not_applicable
-    stars_at_verification: null
-    last_repo_activity_at: null
+  - id: owasp-cheat-sheet-series
+    repo: OWASP/CheatSheetSeries
+    url: https://github.com/OWASP/CheatSheetSeries
+    categories: [security]
+    authority: official_foundation
+    market_validation: high
+    stars_at_verification: 33059
+    last_repo_activity_at: "2026-09-02"
     evidence_role: primary_guidance
-    use_for: "Secure Software Development Framework practices and software security lifecycle guidance."
-    limitations: "High-level guidance requires project-specific threat and implementation decisions."
+    use_for: "Application-security design and implementation guidance."
+    limitations: "Does not replace project-specific threat modeling."
 
   - id: owasp-asvs
     repo: OWASP/ASVS
@@ -406,18 +188,6 @@ sources:
     use_for: "Application security verification requirements and control coverage."
     limitations: "Does not replace project-specific threat modeling or implementation evidence."
 
-  - id: slsa-specification
-    repo: slsa-framework/slsa
-    url: https://slsa.dev/spec/v1.2/
-    categories: [security, software_supply_chain, provenance]
-    authority: industry_consensus_specification
-    market_validation: low
-    stars_at_verification: 1921
-    last_repo_activity_at: "2026-09-02"
-    evidence_role: specification
-    use_for: "Software supply-chain provenance, source, build, and verification requirements."
-    limitations: "SLSA level selection still depends on project risk and delivery model."
-
   - id: openssf-osps-baseline
     repo: ossf/security-baseline
     url: https://baseline.openssf.org/
@@ -425,91 +195,20 @@ sources:
     authority: official_foundation_guidance
     market_validation: low
     stars_at_verification: 162
-    last_repo_activity_at: "2026-08-31"
+    last_repo_activity_at: "2026-09-02"
     evidence_role: security_baseline
     use_for: "Assess baseline security practices of open-source projects relative to maturity."
     limitations: "Baseline compliance does not prove functional or architectural fit."
 
-  - id: nist-ai-rmf
-    repo: null
-    url: https://www.nist.gov/itl/ai-risk-management-framework
-    categories: [ai, risk, governance]
-    authority: government_framework
-    market_validation: not_applicable
-    stars_at_verification: null
-    last_repo_activity_at: null
-    evidence_role: risk_framework
-    use_for: "AI risk, trustworthiness, governance, and evaluation framing."
-    limitations: "Does not rank models or prove a particular AI architecture is superior."
-
-  - id: mlperf-inference
-    repo: mlcommons/inference
-    url: https://docs.mlcommons.org/inference/
-    categories: [ai, performance, benchmarking]
-    authority: industry_benchmark_standard
+  - id: cncf-landscape
+    repo: cncf/landscape
+    url: https://github.com/cncf/landscape
+    primary_url: https://landscape.cncf.io/
+    categories: [cloud_native, ecosystem_discovery, infrastructure]
+    authority: official_foundation
     market_validation: low
-    stars_at_verification: 1626
+    stars_at_verification: 9985
     last_repo_activity_at: "2026-09-03"
-    evidence_role: benchmark_methodology
-    use_for: "Representative and reproducible ML inference benchmark methodology and results."
-    limitations: "Benchmark workloads must match the target deployment before results are generalized."
-
-  - id: excalidraw
-    repo: excalidraw/excalidraw
-    url: https://github.com/excalidraw/excalidraw
-    categories: [frontend, canvas, mature_implementation]
-    authority: project_official
-    market_validation: high
-    stars_at_verification: 131067
-    last_repo_activity_at: "2026-09-03"
-    evidence_role: field_implementation
-    use_for: "Study a long-lived, high-adoption interactive canvas implementation."
-    limitations: "Its framework choices are field evidence, not proof that the same framework is best for another project."
-
-  - id: tldraw
-    repo: tldraw/tldraw
-    url: https://github.com/tldraw/tldraw
-    categories: [frontend, canvas, sdk, mature_implementation]
-    authority: project_official
-    market_validation: high
-    stars_at_verification: 50105
-    last_repo_activity_at: "2026-09-03"
-    evidence_role: field_implementation
-    use_for: "Study a mature infinite-canvas SDK and application architecture."
-    limitations: "Product architecture and framework choices must be mapped to the target workload before reuse."
-
-  - id: affine
-    repo: toeverything/AFFiNE
-    url: https://github.com/toeverything/AFFiNE
-    categories: [frontend, workspace, collaboration, mature_implementation]
-    authority: project_official
-    market_validation: high
-    stars_at_verification: 72145
-    last_repo_activity_at: "2026-09-03"
-    evidence_role: field_implementation
-    use_for: "Study a large collaborative workspace/product implementation."
-    limitations: "A similar product category does not establish identical architecture requirements."
-
-  - id: grafana
-    repo: grafana/grafana
-    url: https://github.com/grafana/grafana
-    categories: [observability, frontend, backend, mature_implementation]
-    authority: project_official
-    market_validation: high
-    stars_at_verification: 76562
-    last_repo_activity_at: "2026-09-03"
-    evidence_role: field_implementation
-    use_for: "Study a long-lived, large-scale observability product and plugin/application architecture."
-    limitations: "Patterns must be checked against the target project's scale and product shape."
-
-  - id: kubernetes
-    repo: kubernetes/kubernetes
-    url: https://github.com/kubernetes/kubernetes
-    categories: [infrastructure, distributed_systems, mature_implementation]
-    authority: project_official
-    market_validation: high
-    stars_at_verification: 126309
-    last_repo_activity_at: "2026-09-03"
-    evidence_role: field_implementation
-    use_for: "Study mature distributed-system, API, controller, and operational patterns."
-    limitations: "Kubernetes-scale architecture is often inappropriate for smaller projects; use as field evidence, not a default design."
+    evidence_role: official_ecosystem_map
+    use_for: "Discover cloud-native projects and official CNCF ecosystem metadata."
+    limitations: "Being listed does not imply a technology is needed or suitable."
