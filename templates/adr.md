@@ -15,8 +15,6 @@
 
 ## Considered Options
 
-候选不需要数量对称，也不要求包含“最简单方案”。
-
 ### Option A
 
 优点：
@@ -35,11 +33,9 @@
 
 ## Decision
 
-选择什么，以及哪些事实和 trade-off 对这个选择最关键。
+选择什么，以及关键事实和 trade-off。
 
 ## Decision Evidence Map
-
-把关键结论与支撑它的证据对应起来，而不是只附一份参考列表。
 
 - 关键结论：
   - 项目事实：
@@ -49,22 +45,20 @@
 
 ## Alternatives and Rationale
 
-为什么没有选择其他主要候选。允许结论是多个方案都合理，但当前基于某些约束选择其中之一。
+未选主要候选及原因。
 
 ## Evidence
 
 - 项目本地事实：
 - Project Authority：
   - 文档：
-  - authority scope：
-  - 为什么覆盖当前问题：
-- Fresh external（本轮实际访问）：
-- Inherited external（项目已有研究）：
-- Model knowledge（若参与判断）：
-- 成熟实现或生产案例：
-- 仍然未知：
-
-对重大外部结论，ADR 或对用户的最终说明应保留可复核来源。Discovery / ecosystem list 只用于发现候选时，不应作为最终技术适配证明。
+  - scope：
+  - 与当前问题的关系：
+- Fresh external：
+- Inherited external：
+- Model knowledge：
+- 成熟实现 / 生产案例：
+- 未知项：
 
 ## Consequences
 
@@ -78,12 +72,14 @@
 
 ## Exit / Rollback
 
-如果关键假设变化或判断错误，如何回退、迁移或替换。
+回退、迁移或替换条件与方式。
 
 ## Quantitative Claims
 
-如包含工期、百分比、成本、资源体积或性能数字，记录其测量、PoC、benchmark 或计算依据。没有依据的数字不要写成事实。
+- claim：
+- basis：
+- confidence：
 
 ## Verification
 
-用什么指标、测试、回放或观察判断这个决策在真实项目里是否成立。
+指标、测试、回放或观察方式。
