@@ -44,9 +44,14 @@
 ## Evidence
 
 - 项目本地事实：
-- 官方/一手资料：
+- Project Authority：
+  - 文档：
+  - authority scope：
+  - 为什么覆盖当前问题：
+- Fresh external（本轮实际访问）：
+- Inherited external（项目已有研究）：
+- Model knowledge（若参与判断）：
 - 成熟实现或生产案例：
-- 其他交叉验证：
 - 仍然未知：
 
 ## Consequences
@@ -62,6 +67,10 @@
 ## Exit / Rollback
 
 如果关键假设变化或判断错误，如何回退、迁移或替换。
+
+## Quantitative Claims
+
+如包含工期、百分比、成本、资源体积或性能数字，记录其测量、PoC、benchmark 或计算依据。没有依据的数字不要写成事实。
 
 ## Verification
 
