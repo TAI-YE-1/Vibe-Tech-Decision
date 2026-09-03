@@ -15,46 +15,29 @@ external_evidence:
   fresh_external:
     - source: null
       evidence_role: null
-      checked: null
       supports: null
       limitations: null
-
   inherited_external:
     - source: null
-      evidence_role: null
       inherited_from: null
       supports: null
-
   model_knowledge:
     - claim: null
       verification_needed: null
 
-decision_confidence:
-  decision_status: null
-  confidence_basis: []
-  unresolved: []
-  change_my_mind_if: []
-
-conclusion_bindings:
-  - conclusion: null
+conclusions:
+  - claim: null
     project_evidence: []
-    fresh_external_sources: []
-    inherited_external_sources: []
+    fresh_external: []
+    inherited_external: []
     inference: null
 
-user_visible_references:
-  - source: null
-    supports_conclusion: null
-
-specific_technology_checks:
-  - technology: null
-    official_status_checked: null
-    deprecation_or_sunset_checked: null
-    current_version_or_successor_checked: null
+decision:
+  confidence: null
+  unresolved: []
+  change_if: []
 
 quantitative_claims:
   - claim: null
     basis: null
     confidence: null
-
-unknowns: []
