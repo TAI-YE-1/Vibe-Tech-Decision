@@ -29,6 +29,12 @@ external_evidence:
     - claim: null
       verification_needed: null
 
+decision_confidence:
+  decision_status: null
+  confidence_basis: []
+  unresolved: []
+  change_my_mind_if: []
+
 conclusion_bindings:
   - conclusion: null
     project_evidence: []
