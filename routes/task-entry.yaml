@@ -47,4 +47,3 @@ task_types:
 rules:
   - "Do not force reuse-and-build onto refactor, bug, or performance questions."
   - "Do not escalate a local defect into an architecture decision without evidence."
-  - "Task classification is routing guidance, not a technology conclusion."
