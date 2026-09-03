@@ -11,4 +11,11 @@ also_research:
   - candidate_technology_official_documentation
   - relevant_protocol_or_standard
   - comparable_mature_implementations
+evidence_expectations:
+  - "Use primary sources for protocol or technology facts."
+  - "Use mature implementations or production cases to test whether a pattern maps to the target context."
+  - "Discovery or tutorial material alone does not prove architecture fit."
+output_requirements:
+  - "For major architecture conclusions, expose the references that materially support them."
+  - "Bind each visible reference to the claim or trade-off it supports."
 note: "Research navigation only; no preferred architecture."

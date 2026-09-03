@@ -31,6 +31,26 @@ policy:
     fresh_external: "Actually accessed and checked during the current decision."
     inherited_external: "External research summarized inside the target project's existing documents."
     model_knowledge: "Model memory or general prior knowledge; useful for discovery, not proof of current verification."
+  evidence_role_semantics:
+    discovery:
+      purpose: "Find candidate technologies, products, APIs, projects, or further sources."
+      may_support_final_recommendation_alone: false
+    primary_fact:
+      purpose: "Verify current technology capabilities, official status, versions, constraints, or standards."
+      preferred_sources: [official_documentation, official_repository, standard, rfc]
+    comparison:
+      purpose: "Compare adjacent technologies or architectural trade-offs."
+      may_require_primary_verification: true
+    implementation_or_case:
+      purpose: "Show how a mature system implements or operates a relevant pattern."
+      requires_scenario_fit_check: true
+    methodology:
+      purpose: "Structure the decision process or maturity discussion."
+      may_support_specific_technology_fit_alone: false
+  conclusion_binding:
+    visible_references_for_major_external_claims: true
+    bind_sources_to_supported_claims: true
+    bibliography_without_claim_mapping_is_insufficient: true
   rules:
     - "Do not convert these dimensions into a single trust score."
     - "Official or primary sources may be decisive regardless of stars."
@@ -40,6 +60,9 @@ policy:
     - "The model may use sources not present in this catalog when they are more direct, current, or relevant."
     - "Catalog metadata does not prove a source is still current at recommendation time."
     - "Do not present inherited_external or model_knowledge as fresh_external research."
+    - "Discovery and ecosystem-list sources may discover candidates but must not alone justify a final technology recommendation."
+    - "A source must only be used for claims within its evidence role and documented limitations."
+    - "When external evidence materially supports a major conclusion, surface user-visible references tied to that conclusion."
 
 sources:
   - id: awesome

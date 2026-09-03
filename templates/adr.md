@@ -37,6 +37,16 @@
 
 选择什么，以及哪些事实和 trade-off 对这个选择最关键。
 
+## Decision Evidence Map
+
+把关键结论与支撑它的证据对应起来，而不是只附一份参考列表。
+
+- 关键结论：
+  - 项目事实：
+  - Fresh external：
+  - Inherited external：
+  - 推论：
+
 ## Alternatives and Rationale
 
 为什么没有选择其他主要候选。允许结论是多个方案都合理，但当前基于某些约束选择其中之一。
@@ -53,6 +63,8 @@
 - Model knowledge（若参与判断）：
 - 成熟实现或生产案例：
 - 仍然未知：
+
+对重大外部结论，ADR 或对用户的最终说明应保留可复核来源。Discovery / ecosystem list 只用于发现候选时，不应作为最终技术适配证明。
 
 ## Consequences
 

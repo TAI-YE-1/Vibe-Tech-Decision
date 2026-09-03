@@ -11,4 +11,11 @@ also_research:
   - candidate_infrastructure_official_documentation
   - current_deployment_and_operational_constraints
   - production_case_studies_at_comparable_scale
+evidence_expectations:
+  - "Ecosystem maps discover projects; they do not prove the target project needs them."
+  - "Use official documentation for current operational capabilities and support."
+  - "Use comparable production cases for scale or operations claims."
+output_requirements:
+  - "For major infrastructure conclusions, expose the references that materially support them."
+  - "Bind each visible reference to the operational or architecture claim it supports."
 note: "Research navigation only; ecosystem presence does not imply project fit."

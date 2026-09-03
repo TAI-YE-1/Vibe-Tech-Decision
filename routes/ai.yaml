@@ -9,4 +9,11 @@ also_research:
   - framework_official_repository
   - mature_current_implementations
   - current_project_evaluation_and_cost_evidence
+evidence_expectations:
+  - "Prefer current provider/model/framework primary sources because AI capabilities change quickly."
+  - "Use project evaluations for quality, latency, and cost claims."
+  - "Discovery lists can find candidates but cannot alone justify an AI architecture choice."
+output_requirements:
+  - "For major AI recommendations, expose the references and project evidence that materially support them."
+  - "Bind current capability or pricing/status claims to current primary sources."
 note: "Prefer current primary sources and project evidence."
