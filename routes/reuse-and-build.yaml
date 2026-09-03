@@ -1,0 +1,25 @@
+schema_version: 1
+route: reuse-and-build
+stage: before_major_new_build
+purpose: >
+  Discover whether the current project, mature open source, an API, or a managed
+  service already satisfies enough of a substantial new need. This route
+  discovers options; it does not prefer buy, reuse, or build.
+catalog_sources:
+  - id: awesome-selfhosted
+    role: discover_self_hosted_options
+  - id: public-apis
+    role: discover_existing_apis
+  - id: free-for-dev
+    role: discover_managed_services
+  - id: awesome
+    role: discover_domain_specific_curated_lists
+also_research:
+  - current_project_existing_capabilities
+  - candidate_project_official_documentation
+  - candidate_vendor_primary_sources
+  - candidate_license_and_maintenance_status
+exit:
+  - "If existing/reuse/integration options are sufficient, stop before unnecessary custom development."
+  - "If build or deep customization remains appropriate, continue to the relevant architecture/technology route."
+  - "If project facts make custom development obviously appropriate, the model may skip exhaustive external-option discovery after explaining why."
