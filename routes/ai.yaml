@@ -3,6 +3,7 @@ route: ai
 purpose: "Research AI architecture and tooling."
 
 catalog_sources:
+  - id: developer-roadmap
   - id: awesome
 
 research:
