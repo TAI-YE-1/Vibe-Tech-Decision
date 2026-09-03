@@ -19,6 +19,12 @@ also_research:
   - candidate_project_official_documentation
   - candidate_vendor_primary_sources
   - candidate_license_and_maintenance_status
+evidence_expectations:
+  - "Discovery sources find candidates; verify shortlisted options with current primary sources."
+  - "A final reuse/buy/integrate recommendation should be supported by current fit, maintenance, license, product, or vendor evidence."
+output_requirements:
+  - "For major recommendations, expose the references that materially support the conclusion."
+  - "Bind each visible reference to the claim or option it supports."
 exit:
   - "If existing/reuse/integration options are sufficient, stop before unnecessary custom development."
   - "If build or deep customization remains appropriate, continue to the relevant architecture/technology route."
