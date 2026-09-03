@@ -22,7 +22,9 @@ fresh_external / inherited_external / model_knowledge
   ↓
 证据绑定结论
   ↓
-决策 + 可复核来源
+decision_status + unresolved + change_my_mind_if
+  ↓
+简洁决策 + 可复核来源
   ↓
 ADR / implementation / verification
 ```
@@ -39,9 +41,19 @@ ADR / implementation / verification
 - [routes/ai.yaml](routes/ai.yaml)
 - [routes/infrastructure.yaml](routes/infrastructure.yaml)
 - [sources/source-catalog.yaml](sources/source-catalog.yaml)
+- [templates/decision-output.md](templates/decision-output.md)
 - [templates/research-trace.yaml](templates/research-trace.yaml)
 - [templates/adr.md](templates/adr.md)
+- [templates/project-integration-snippet.md](templates/project-integration-snippet.md)
 - [evals/frontend-refactor-existing-project.yaml](evals/frontend-refactor-existing-project.yaml)
+
+## Decision Status
+
+- `provisional`：当前最合理，但仍有可能改变结论的证据缺口
+- `validated`：关键假设已有充分项目证据和适用外部证据验证
+- `blocked_by_evidence`：缺少关键证据，继续下结论会影响正确行动
+
+不使用置信度百分比。
 
 ## Source Rules
 
@@ -50,3 +62,7 @@ ADR / implementation / verification
 - 具体第三方技术的当前状态优先检查官方一手来源。
 - 项目旧文档中的外部研究属于 `inherited_external`，不等于本轮重新验证。
 - 重大外部结论应显示对应参考来源，并说明其支持的结论。
+
+## Project Integration
+
+需要长期使用时，把 [project integration snippet](templates/project-integration-snippet.md) 加到目标项目自己的 agent instructions 中。Vibe-Tech-Decision 保持单一规则来源，不需要把整套规则复制到每个项目。
