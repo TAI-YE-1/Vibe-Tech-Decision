@@ -80,8 +80,9 @@ Research Route 只负责：
 
 Evals 用真实问题检查模型是否真的执行了研究流程，而不是只复述方法论名称。
 
-### ADR
+### Research Trace / ADR
 
+- [Research Trace 模板](templates/research-trace.yaml)：记录本轮实际研究、继承研究、模型知识与定量依据。
 - [ADR 模板](templates/adr.md)
 
 ## 来源在什么时候起效
