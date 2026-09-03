@@ -38,6 +38,12 @@
 - GitHub 30k+ Star 且未归档、仍具维护价值的成熟项目
 - 有大规模真实生产使用证据的成熟项目
 
+### 专项来源
+
+- `ecosystem`：用于在 Python / Node.js / Go / React / Vue / Rust 等生态里发现成熟候选；不能因为进入 Awesome List 就直接采用。
+- `reference_implementation`：用于研究成熟项目实际如何组织和实现；不能机械复制其架构。
+- `official`：官方标准、基金会、厂商一手资料和官方方法论；不受 Star 门槛限制，但仍需判断是否适用于当前场景。
+
 ### 次级证据
 
 10k–30k Star 可用于交叉验证，但不应单独支撑重大架构变化。
