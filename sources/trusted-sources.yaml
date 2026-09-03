@@ -6,6 +6,12 @@ policy:
   secondary_market_validation_stars: 10000
   low_star_personal_repositories: "discovery_only"
   official_exception: "Official standards, foundations, vendors and primary documentation may be core evidence regardless of GitHub stars."
+  trust_levels:
+    core: "Cross-domain, strongly market-validated source. Can support major decisions only together with project evidence and primary documentation."
+    ecosystem: "Strongly market-validated ecosystem discovery source. Use to find candidates, never to select a dependency by list membership alone."
+    reference_implementation: "Mature implementation reference. Use to study patterns and trade-offs, not as a drop-in architecture."
+    official: "Official foundation, standards body, vendor or primary methodology source. Star thresholds do not apply."
+    secondary: "10k-30k market-validated source. Cross-check only; cannot independently justify a major architecture change."
   major_decision_requires:
     - project_local_evidence
     - official_primary_source
@@ -101,7 +107,7 @@ sources:
     repo: realworld-apps/realworld
     url: https://github.com/realworld-apps/realworld
     category: [framework_comparison, reference_implementation]
-    trust: core
+    trust: reference_implementation
     stars_at_verification: 84182
     use_for: "Compare different stacks implementing an equivalent non-trivial application."
     not_for: "Assuming demo architecture matches a high-scale or domain-specific system."
@@ -119,7 +125,108 @@ sources:
     repo: vinta/awesome-python
     url: https://github.com/vinta/awesome-python
     category: [python, ecosystem_discovery]
-    trust: core
+    trust: ecosystem
     stars_at_verification: 317850
     use_for: "Find mature Python libraries by capability before creating or adopting a dependency."
     not_for: "Selecting a library solely because it appears in the list."
+
+
+  - id: awesome-system-design
+    repo: madd86/awesome-system-design
+    url: https://github.com/madd86/awesome-system-design
+    category: [system_design, distributed_systems, discovery]
+    trust: secondary
+    stars_at_verification: 12442
+    use_for: "Find additional distributed-systems and system-design material for cross-checking."
+    not_for: "Independently justifying a major architecture change."
+
+  - id: awesome-nodejs
+    repo: sindresorhus/awesome-nodejs
+    url: https://github.com/sindresorhus/awesome-nodejs
+    category: [nodejs, ecosystem_discovery]
+    trust: ecosystem
+    stars_at_verification: 66690
+    use_for: "Find mature Node.js packages and resources by capability."
+    not_for: "Selecting a dependency solely because it appears in the list."
+
+  - id: awesome-go
+    repo: avelino/awesome-go
+    url: https://github.com/avelino/awesome-go
+    category: [go, ecosystem_discovery]
+    trust: ecosystem
+    stars_at_verification: 183017
+    use_for: "Find mature Go libraries, frameworks and tools by capability."
+    not_for: "Selecting a dependency without checking its own maintenance, API and production fit."
+
+  - id: awesome-react
+    repo: enaqx/awesome-react
+    url: https://github.com/enaqx/awesome-react
+    category: [react, ecosystem_discovery]
+    trust: ecosystem
+    stars_at_verification: 74470
+    use_for: "Map the React ecosystem and discover mature candidate libraries and resources."
+    not_for: "Treating popularity in the React ecosystem as proof that React or a listed library fits the target project."
+
+  - id: awesome-vue
+    repo: vuejs/awesome-vue
+    url: https://github.com/vuejs/awesome-vue
+    category: [vue, ecosystem_discovery]
+    trust: ecosystem
+    stars_at_verification: 73548
+    use_for: "Map the Vue ecosystem and discover mature candidate libraries and resources."
+    not_for: "Selecting Vue or a listed dependency without project-specific evidence."
+
+  - id: awesome-rust
+    repo: rust-unofficial/awesome-rust
+    url: https://github.com/rust-unofficial/awesome-rust
+    category: [rust, ecosystem_discovery]
+    trust: ecosystem
+    stars_at_verification: 59140
+    use_for: "Find mature Rust crates, libraries, applications and learning resources."
+    not_for: "Using Rust or a listed crate solely because of ecosystem popularity."
+
+  - id: node-best-practices
+    repo: goldbergyoni/nodebestpractices
+    url: https://github.com/goldbergyoni/nodebestpractices
+    category: [nodejs, reference_implementation, engineering_practices]
+    trust: reference_implementation
+    stars_at_verification: 105601
+    use_for: "Cross-check production Node.js architecture, reliability, testing, security and operational practices."
+    not_for: "Mechanically applying every practice regardless of project size or constraints."
+
+  - id: bulletproof-react
+    repo: alan2207/bulletproof-react
+    url: https://github.com/alan2207/bulletproof-react
+    category: [react, reference_implementation, frontend_architecture]
+    trust: reference_implementation
+    stars_at_verification: 35788
+    use_for: "Study a mature opinionated React application structure and production-oriented patterns."
+    not_for: "Using its architecture as a mandatory React template or as justification to rewrite an existing frontend."
+
+  - id: cncf-landscape
+    repo: cncf/landscape
+    url: https://github.com/cncf/landscape
+    primary_url: https://landscape.cncf.io/
+    category: [cloud_native, ecosystem_discovery, infrastructure]
+    trust: official
+    stars_at_verification: 9985
+    use_for: "Understand the cloud-native ecosystem, project categories and project metadata from CNCF."
+    not_for: "Assuming a CNCF-listed technology is necessary or suitable for a small project."
+
+  - id: thoughtworks-technology-radar
+    repo: null
+    url: https://www.thoughtworks.com/radar
+    category: [technology_radar, maturity, methodology]
+    trust: official
+    stars_at_verification: null
+    use_for: "Use the Adopt/Trial/Assess/Hold model and Thoughtworks' published technology observations as one official methodology/reference."
+    not_for: "Treating a Thoughtworks ring assignment as a universal recommendation for the target project."
+
+  - id: thoughtworks-build-your-own-radar
+    repo: thoughtworks/build-your-own-radar
+    url: https://github.com/thoughtworks/build-your-own-radar
+    category: [technology_radar, tooling]
+    trust: official
+    stars_at_verification: 2563
+    use_for: "Implement or visualize a local technology radar if this repository later needs one."
+    not_for: "Technology selection evidence; this is tooling for a radar, not proof that a technology should be adopted."
