@@ -1,13 +1,17 @@
 schema_version: 1
 route: infrastructure
-purpose: "Research deployment, cloud-native, orchestration, and platform infrastructure."
+purpose: "Research deployment, cloud-native, orchestration, security, and platform infrastructure."
 
 catalog_sources:
+  - id: rfc-editor
+  - id: google-sre-books
+  - id: opentelemetry-specification
+  - id: nist-ssdf
+  - id: slsa-specification
+  - id: openssf-osps-baseline
   - id: cncf-landscape
-  - id: system-design-primer
-  - id: awesome-scalability
-  - id: thoughtworks-technology-radar
-  - id: thoughtworks-build-your-own-radar
+  - id: grafana
+  - id: kubernetes
 
 research:
   - current_deployment_and_operational_constraints
