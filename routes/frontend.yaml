@@ -3,11 +3,15 @@ route: frontend
 purpose: "Research frontend framework, ecosystem, migration, and application architecture."
 
 catalog_sources:
-  - id: developer-roadmap
+  - id: whatwg-html
+  - id: mdn-web-docs
+  - id: w3c-web-performance
   - id: realworld
+  - id: excalidraw
+  - id: tldraw
+  - id: affine
   - id: awesome-react
   - id: awesome-vue
-  - id: bulletproof-react
 
 research:
   - current_project_frontend_facts
