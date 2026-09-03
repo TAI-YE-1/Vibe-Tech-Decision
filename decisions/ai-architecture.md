@@ -1,75 +1,78 @@
-# AI / RAG / Agent 怎么选
+# AI / RAG / Agent 架构
 
-## 默认原则
+## 这张卡解决什么
 
-**先用最简单的确定性流程。**
+帮助区分不同 AI 架构组件解决的问题，避免把 Prompt、Workflow、RAG、Agent、Multi-Agent、Vector DB 当成固定升级路线。
 
-LLM 能完成，不等于需要 Agent；需要外部知识，不等于需要 Vector DB；需要多个步骤，不等于需要 Multi-Agent。
+**这张卡不预设“简单确定性流程永远优先”，也不禁止 Agent 或 Multi-Agent。**
 
-## Prompt / Structured Output
+## 建议检查的维度
 
-优先用于：
+- 任务是否确定、可预先编排
+- 是否需要动态选择工具或步骤
+- 外部知识的规模、更新频率和检索方式
+- 上下文长度与成本
+- 质量指标和评测方式
+- 延迟与吞吐
+- 失败成本
+- 可重复性
+- 可观测性
+- 权限与安全边界
+- 模型能力
+- 工具可靠性
+- 人工确认要求
+- token / API / 基础设施成本
+- 状态和记忆需求
 
-- 单次生成
-- 分类、抽取、改写
-- 有明确输入输出结构的任务
+## 常见能力组件
 
-## Tool Calling / Workflow
+- Prompt
+- Structured Output
+- Tool / Function Calling
+- Deterministic Workflow
+- RAG
+- Search
+- Memory
+- Agent
+- Multi-Agent
+- Vector Search / Vector Database
+- Model Routing
+- Background / Async Execution
 
-优先用于：
+这些可以组合，不是互斥技术栈，也不是成熟度阶梯。
 
-- 模型需要调用明确工具
-- 步骤基本可预测
-- 需要把业务规则放在确定性代码里
+## 常见场景模式
 
-通常先做固定 workflow，再评估 Agent。
+- 明确输入输出的抽取/分类可能只需要 Prompt + Structured Output
+- 可预先定义步骤的任务可能适合 Workflow + Tools
+- 大量外部知识可能需要 Search / RAG
+- 步骤取决于中间结果时 Agent 可能更自然
+- 某些复杂协作任务可能值得 Multi-Agent
+- 现有数据库扩展或独立 Vector DB 都可能适合向量检索
 
-## RAG
+这些是模式，不是默认答案。
 
-认真考虑于：
+## 研究来源
 
-- 模型需要访问大量、变化中的外部知识
-- 上下文不能简单全部放入 prompt
-- 能定义检索质量的验证集
-
-如果只有少量规则、配置或数据库事实，先考虑直接查询或明确注入上下文。
-
-## Agent
-
-只有在这些情况更合理：
-
-- 步骤无法预先完整确定
-- 模型必须根据中间结果动态选择下一步工具
-- 失败成本可控
-- 有可观测、预算、超时和人工兜底
-
-## Multi-Agent
-
-默认不采用。
-
-必须证明单 Agent / workflow 无法合理解决，并证明多个 Agent 的协调成本值得。
-
-## Vector Database
-
-不要因为“做 RAG”就自动新增。
-
-先比较：
-
-- 现有 PostgreSQL + pgvector 等现有存储扩展
-- 搜索引擎已有向量能力
-- 数据规模、查询延迟和运维要求是否真的需要独立产品
-
-## 证据要求
-
-- 当前失败案例或质量指标
-- 目标模型/平台官方文档
+- 模型/平台官方文档
 - `developer-roadmap` 用于概念地图
-- 对应成熟框架/产品的高市场验证实现
-- 自己项目的离线评测或可重复测试
+- 目标 AI 框架/SDK 的官方实现
+- 大规模成熟开源 Agent / RAG / workflow 项目
+- 当前项目自己的离线评测、回放和成本数据
 
-## 禁止理由
+## 容易误导判断的说法
 
 - “Agent 更智能”
-- “Multi-Agent 更像团队”
+- “Workflow 一定比 Agent 稳定”
+- “Multi-Agent 一定是过度设计”
 - “RAG 是 AI 项目标配”
-- “Vector DB 专门做向量所以一定更好”
+- “Vector DB 专门做向量，所以一定最好”
+- “现有数据库能做向量，所以永远不用专用产品”
+
+这些都需要场景证据。
+
+## 自主判断要求
+
+AI 可以直接建议复杂方案，只要复杂度对应真实需求，并能说明为什么更简单或不同的架构在当前场景下不如它。
+
+同样，如果简单方案已经满足目标，也不应为了体现 AI 架构复杂度而升级。
