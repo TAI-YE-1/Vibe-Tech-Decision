@@ -8,11 +8,12 @@ catalog_sources:
   - id: public-apis
   - id: free-for-dev
   - id: awesome
+  - id: openssf-osps-baseline
 
 research:
   - current_project_existing_capabilities
   - shortlisted_candidate_primary_sources
-  - license_and_maintenance_when_relevant
+  - license_maintenance_and_security_when_relevant
 
 exit:
   - "Stop if an existing or integrated option is sufficient."
