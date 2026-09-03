@@ -52,9 +52,3 @@ quantitative_claims:
     confidence: null
 
 unknowns: []
-
-note: >
-  This trace is evidence bookkeeping. It does not need to be shown verbatim to
-  the user. For major decisions, external evidence that materially supports a
-  conclusion should be surfaced to the user and tied to the conclusion it
-  supports. Discovery sources alone do not prove technology fit.
