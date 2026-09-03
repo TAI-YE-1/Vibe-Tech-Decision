@@ -3,6 +3,8 @@ route: ai
 purpose: "Research AI architecture and tooling."
 
 catalog_sources:
+  - id: nist-ai-rmf
+  - id: mlperf-inference
   - id: developer-roadmap
   - id: awesome
 
