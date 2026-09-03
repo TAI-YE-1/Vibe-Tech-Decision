@@ -1,0 +1,14 @@
+schema_version: 1
+route: infrastructure
+purpose: "Research deployment, cloud-native, orchestration, and platform infrastructure."
+catalog_sources:
+  - id: cncf-landscape
+  - id: system-design-primer
+  - id: awesome-scalability
+  - id: thoughtworks-technology-radar
+  - id: thoughtworks-build-your-own-radar
+also_research:
+  - candidate_infrastructure_official_documentation
+  - current_deployment_and_operational_constraints
+  - production_case_studies_at_comparable_scale
+note: "Research navigation only; ecosystem presence does not imply project fit."
