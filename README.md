@@ -36,7 +36,6 @@ Task Classification
 - [templates/research-trace.yaml](templates/research-trace.yaml)
 - [templates/adr.md](templates/adr.md)
 - [templates/project-integration-snippet.md](templates/project-integration-snippet.md)
-- [evals/frontend-refactor-existing-project.yaml](evals/frontend-refactor-existing-project.yaml)
 
 Source Catalog 是研究入口，不是白名单。重大外部结论应由实际检查过且适用的来源支撑。
 
