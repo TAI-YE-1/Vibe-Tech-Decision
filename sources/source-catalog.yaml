@@ -308,3 +308,208 @@ sources:
     evidence_role: tooling_reference
     use_for: "Implement a technology-radar visualization if needed."
     limitations: "Tooling only; not technology-selection evidence."
+
+
+  - id: rfc-editor
+    repo: null
+    url: https://www.rfc-editor.org/
+    categories: [internet_standards, protocols, system_design]
+    authority: official_standard_publisher
+    market_validation: not_applicable
+    stars_at_verification: null
+    last_repo_activity_at: null
+    evidence_role: specification
+    use_for: "Authoritative RFCs, Internet Standards, BCPs, protocol semantics, and status."
+    limitations: "Protocol authority does not establish project-specific architecture fit."
+
+  - id: whatwg-html
+    repo: whatwg/html
+    url: https://html.spec.whatwg.org/multipage/
+    categories: [frontend, web_platform, standards]
+    authority: official_standard
+    market_validation: low
+    stars_at_verification: 9380
+    last_repo_activity_at: "2026-09-03"
+    evidence_role: specification
+    use_for: "HTML, browser navigation, loading, storage, workers, and web application platform semantics."
+    limitations: "Defines platform behavior; does not choose an application framework."
+
+  - id: mdn-web-docs
+    repo: mdn/content
+    url: https://developer.mozilla.org/
+    categories: [frontend, web_platform, compatibility]
+    authority: official_web_platform_documentation
+    market_validation: medium
+    stars_at_verification: 10966
+    last_repo_activity_at: "2026-09-03"
+    evidence_role: primary_reference
+    use_for: "Practical browser API, HTML, CSS, JavaScript, and compatibility reference."
+    limitations: "Documentation and compatibility evidence do not establish project-specific architecture fit."
+
+  - id: w3c-web-performance
+    repo: w3c/performance-timeline
+    url: https://www.w3.org/webperf/
+    categories: [frontend, performance, standards]
+    authority: official_standard_body
+    market_validation: low
+    stars_at_verification: 113
+    last_repo_activity_at: "2026-07-15"
+    evidence_role: measurement_specification
+    use_for: "Web performance measurement APIs and timing standards."
+    limitations: "Measurement standards identify what can be measured; they do not diagnose a target project by themselves."
+
+  - id: google-sre-books
+    repo: google/googlesre
+    url: https://sre.google/books/
+    categories: [reliability, operations, system_design]
+    authority: official_production_methodology
+    market_validation: low
+    stars_at_verification: 166
+    last_repo_activity_at: "2026-07-31"
+    evidence_role: production_practice
+    use_for: "SRE, SLOs, incident response, reliability engineering, and production operations."
+    limitations: "Google-scale practices require adaptation to the target project's scale and constraints."
+
+  - id: opentelemetry-specification
+    repo: open-telemetry/opentelemetry-specification
+    url: https://opentelemetry.io/docs/specs/otel/
+    categories: [observability, backend, infrastructure]
+    authority: official_project_specification
+    market_validation: low
+    stars_at_verification: 4336
+    last_repo_activity_at: "2026-09-03"
+    evidence_role: specification
+    use_for: "Cross-language telemetry, traces, metrics, logs, semantic conventions, and OTLP."
+    limitations: "Specification support does not prove a particular observability stack is needed."
+
+  - id: nist-ssdf
+    repo: null
+    url: https://csrc.nist.gov/pubs/sp/800/218/final
+    categories: [security, software_supply_chain, engineering_practices]
+    authority: government_standard_guidance
+    market_validation: not_applicable
+    stars_at_verification: null
+    last_repo_activity_at: null
+    evidence_role: primary_guidance
+    use_for: "Secure Software Development Framework practices and software security lifecycle guidance."
+    limitations: "High-level guidance requires project-specific threat and implementation decisions."
+
+  - id: owasp-asvs
+    repo: OWASP/ASVS
+    url: https://owasp.org/www-project-application-security-verification-standard/
+    categories: [security, application_security, verification]
+    authority: official_foundation_standard
+    market_validation: low
+    stars_at_verification: 3588
+    last_repo_activity_at: "2026-09-03"
+    evidence_role: verification_standard
+    use_for: "Application security verification requirements and control coverage."
+    limitations: "Does not replace project-specific threat modeling or implementation evidence."
+
+  - id: slsa-specification
+    repo: slsa-framework/slsa
+    url: https://slsa.dev/spec/v1.2/
+    categories: [security, software_supply_chain, provenance]
+    authority: industry_consensus_specification
+    market_validation: low
+    stars_at_verification: 1921
+    last_repo_activity_at: "2026-09-02"
+    evidence_role: specification
+    use_for: "Software supply-chain provenance, source, build, and verification requirements."
+    limitations: "SLSA level selection still depends on project risk and delivery model."
+
+  - id: openssf-osps-baseline
+    repo: ossf/security-baseline
+    url: https://baseline.openssf.org/
+    categories: [security, open_source, reuse_and_build]
+    authority: official_foundation_guidance
+    market_validation: low
+    stars_at_verification: 162
+    last_repo_activity_at: "2026-08-31"
+    evidence_role: security_baseline
+    use_for: "Assess baseline security practices of open-source projects relative to maturity."
+    limitations: "Baseline compliance does not prove functional or architectural fit."
+
+  - id: nist-ai-rmf
+    repo: null
+    url: https://www.nist.gov/itl/ai-risk-management-framework
+    categories: [ai, risk, governance]
+    authority: government_framework
+    market_validation: not_applicable
+    stars_at_verification: null
+    last_repo_activity_at: null
+    evidence_role: risk_framework
+    use_for: "AI risk, trustworthiness, governance, and evaluation framing."
+    limitations: "Does not rank models or prove a particular AI architecture is superior."
+
+  - id: mlperf-inference
+    repo: mlcommons/inference
+    url: https://docs.mlcommons.org/inference/
+    categories: [ai, performance, benchmarking]
+    authority: industry_benchmark_standard
+    market_validation: low
+    stars_at_verification: 1626
+    last_repo_activity_at: "2026-09-03"
+    evidence_role: benchmark_methodology
+    use_for: "Representative and reproducible ML inference benchmark methodology and results."
+    limitations: "Benchmark workloads must match the target deployment before results are generalized."
+
+  - id: excalidraw
+    repo: excalidraw/excalidraw
+    url: https://github.com/excalidraw/excalidraw
+    categories: [frontend, canvas, mature_implementation]
+    authority: project_official
+    market_validation: high
+    stars_at_verification: 131067
+    last_repo_activity_at: "2026-09-03"
+    evidence_role: field_implementation
+    use_for: "Study a long-lived, high-adoption interactive canvas implementation."
+    limitations: "Its framework choices are field evidence, not proof that the same framework is best for another project."
+
+  - id: tldraw
+    repo: tldraw/tldraw
+    url: https://github.com/tldraw/tldraw
+    categories: [frontend, canvas, sdk, mature_implementation]
+    authority: project_official
+    market_validation: high
+    stars_at_verification: 50105
+    last_repo_activity_at: "2026-09-03"
+    evidence_role: field_implementation
+    use_for: "Study a mature infinite-canvas SDK and application architecture."
+    limitations: "Product architecture and framework choices must be mapped to the target workload before reuse."
+
+  - id: affine
+    repo: toeverything/AFFiNE
+    url: https://github.com/toeverything/AFFiNE
+    categories: [frontend, workspace, collaboration, mature_implementation]
+    authority: project_official
+    market_validation: high
+    stars_at_verification: 72145
+    last_repo_activity_at: "2026-09-03"
+    evidence_role: field_implementation
+    use_for: "Study a large collaborative workspace/product implementation."
+    limitations: "A similar product category does not establish identical architecture requirements."
+
+  - id: grafana
+    repo: grafana/grafana
+    url: https://github.com/grafana/grafana
+    categories: [observability, frontend, backend, mature_implementation]
+    authority: project_official
+    market_validation: high
+    stars_at_verification: 76562
+    last_repo_activity_at: "2026-09-03"
+    evidence_role: field_implementation
+    use_for: "Study a long-lived, large-scale observability product and plugin/application architecture."
+    limitations: "Patterns must be checked against the target project's scale and product shape."
+
+  - id: kubernetes
+    repo: kubernetes/kubernetes
+    url: https://github.com/kubernetes/kubernetes
+    categories: [infrastructure, distributed_systems, mature_implementation]
+    authority: project_official
+    market_validation: high
+    stars_at_verification: 126309
+    last_repo_activity_at: "2026-09-03"
+    evidence_role: field_implementation
+    use_for: "Study mature distributed-system, API, controller, and operational patterns."
+    limitations: "Kubernetes-scale architecture is often inappropriate for smaller projects; use as field evidence, not a default design."
