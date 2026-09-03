@@ -6,7 +6,6 @@ purpose: "Find viable existing, reusable, integrated, managed, or custom options
 catalog_sources:
   - id: awesome-selfhosted
   - id: public-apis
-  - id: free-for-dev
   - id: awesome
   - id: openssf-osps-baseline
 
