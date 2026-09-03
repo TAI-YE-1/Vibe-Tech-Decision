@@ -2,15 +2,13 @@
 
 - 状态：Proposed
 - 日期：YYYY-MM-DD
-- decision_status：provisional | validated | blocked_by_evidence
 
 ## Context
 
-当前问题、约束、规模、已有架构、事实、假设和未知项。
+当前问题、约束、事实、假设和未知项。
 
 ## Decision Drivers
 
-- 
 - 
 - 
 
@@ -22,50 +20,26 @@
 
 缺点：
 
-适用条件：
-
 ### Option B
 
 优点：
 
 缺点：
 
-适用条件：
-
 ## Decision
 
-选择什么，以及关键事实和 trade-off。
+选择什么，以及关键 trade-off。
 
-## Decision Confidence
+## Evidence & Confidence
 
-- confidence_basis：
-- unresolved：
-- change_my_mind_if：
-
-## Decision Evidence Map
-
-- 关键结论：
-  - 项目事实：
-  - Fresh external：
-  - Inherited external：
-  - 推论：
-
-## Alternatives and Rationale
-
-未选主要候选及原因。
-
-## Evidence
-
-- 项目本地事实：
+- 项目事实：
 - Project Authority：
-  - 文档：
-  - scope：
-  - 与当前问题的关系：
 - Fresh external：
 - Inherited external：
-- Model knowledge：
-- 成熟实现 / 生产案例：
-- 未知项：
+- 推论：
+- confidence（可选）：
+- unresolved：
+- change_if：
 
 ## Consequences
 
@@ -79,13 +53,11 @@
 
 ## Exit / Rollback
 
-回退、迁移或替换条件与方式。
+回退、迁移或替换条件。
 
 ## Quantitative Claims
 
-- claim：
-- basis：
-- confidence：
+仅记录有测量、PoC、benchmark 或计算依据的定量 claim。
 
 ## Verification
 

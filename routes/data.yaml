@@ -1,21 +1,15 @@
 schema_version: 1
 route: data
 purpose: "Research databases, storage, search, analytics, and data-platform choices."
+
 catalog_sources:
   - id: system-design-primer
   - id: system-design
   - id: awesome-scalability
   - id: developer-roadmap
-also_research:
-  - candidate_database_or_storage_official_documentation
+
+research:
   - current_project_data_and_query_evidence
-  - benchmarks_matching_current_workload
-  - mature_projects_with_similar_data_patterns
-evidence_expectations:
-  - "Use current project workload evidence before making storage or database-fit claims."
-  - "Use primary sources for candidate capabilities and constraints."
-  - "Use benchmarks only when their workload and conditions are comparable."
-output_requirements:
-  - "For major data-platform conclusions, expose the references that materially support them."
-  - "Bind benchmark or primary-source references to the specific claim they support."
-note: "Research navigation only; no storage model is prescribed."
+  - candidate_primary_sources
+  - comparable_benchmarks_when_useful
+  - mature_projects_with_similar_data_patterns_when_useful

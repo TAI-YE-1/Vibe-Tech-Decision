@@ -2,143 +2,64 @@
 
 ## 1. Current Project First
 
-判断前优先恢复：
-
-- 当前代码、依赖、运行方式和测试
-- 指标、日志、可复现问题
-- 当前 Project Authority / roadmap / ADR
-- 用户目标和约束
+判断前先恢复当前代码、依赖、运行方式、测试、可用指标/日志、相关 Project Authority，以及用户目标和约束。
 
 当前项目事实高于本仓库的一般规则。
 
-## 2. Classify the Task
+## 2. Route the Question
 
-先读取 `routes/task-entry.yaml`。
+先读取 `routes/task-entry.yaml`，再进入相关 domain route。
 
-- `new_capability`：先判断 current capability / reuse / buy / integrate / build
-- `refactor_or_migration`：先恢复现状和 Project Authority scope，再进入 domain route
-- `bug`：先复现和定位
-- `performance`：先测量
-- `technology_selection`：恢复项目事实后进入 domain route
-- `security_or_infrastructure`：恢复项目事实和相关 authority 后进入 domain route
+- 新能力：考虑现有能力、复用、集成、购买和自研
+- 重构 / 迁移：先恢复现状和相关 Authority scope
+- Bug：先复现和定位
+- 性能：先测量
+- 技术选型 / 安全 / 基础设施：从当前项目事实进入相关研究路径
 
-不要把所有问题机械套入 Build-vs-Buy，也不要无证据把局部问题升级成架构问题。
+Task route 是研究导航，不是技术结论。不要无证据把局部问题升级成架构问题。
 
 ## 3. Authority Scope
 
 Project Authority 只在声明范围内生效。
 
-以下表述不得自动解释为全项目永久禁止：
+`non-goal`、`out of scope`、`deferred`、`this program does not include ...` 等表述，不自动等于全项目永久禁止。
 
-- `this program does not include ...`
-- `this decision does not authorize ...`
-- `non-goal`
-- `out of scope`
-- `deferred`
+用 Authority 排除方案前，确认其 scope 覆盖当前问题。
 
-用某份 Authority 排除方案前，确认其 scope 覆盖当前问题。
+## 4. Evidence
 
-## 4. Evidence Classes
+区分：
 
 - `fresh_external`：本轮实际访问并检查过的外部来源
-- `inherited_external`：目标项目文档中已有的外部研究
+- `inherited_external`：目标项目已有文档中的外部研究
 - `model_knowledge`：模型已有知识
 
-没有对应 `fresh_external` 时，不得声称“已查官方资料”“已基于当前外部可信来源验证”。
+重要规则：
 
-## 5. Source Roles
+- 没有对应 `fresh_external`，不得声称本轮已经外部验证
+- 来源只支撑它能够证明的 claim；Discovery 来源不能单独证明技术适配
+- 具体技术的当前状态会影响结论时，优先检查当前官方一手来源
+- 成熟项目 / 生产案例可证明模式可行，但不能自动证明某技术对当前项目更优
+- 外部证据实质支持重大结论时，应让用户看到可复核来源
 
-- discovery / ecosystem list：发现候选
-- official / primary source：验证当前能力、状态、版本、限制
-- comparison / trade-off：比较方案
-- mature implementation / production case：验证真实落地模式
-- methodology：组织决策过程
+## 5. Decision Quality
 
-Discovery 来源不能单独支撑最终技术推荐。
+重大决策应基于足以改变结论的证据，并公平考虑真正有竞争力的替代方案。
 
-## 6. Conclusion Binding
+没有项目数据、PoC、可比 benchmark 或可解释计算依据时，不要把工期、性能、效率、成本或资源变化写成精确事实。
 
-重大工程判断中：
+不确定性会影响行动时应明确说明。需要长期记录时，可在 Research Trace / ADR 中记录 confidence、unresolved 和可能改变判断的证据。
 
-- 关键外部事实必须来自实际检查过的来源
-- 关键推荐必须能映射到项目事实和外部证据
-- 外部证据实质支持结论时，最终回答应给出可见参考来源
-- 来源应说明支持哪条关键结论
-- 推论必须标明为推论，不得伪装成来源原文结论
+高 Star、流行度、“更现代”、大厂采用、模型记忆或不等价 benchmark 都不能单独决定结论。
 
-## 7. Decision Confidence
+## 6. Output
 
-不要把“当前最合理”写成“已经证明正确”。
+让用户容易找到：
 
-重大决策应给出：
+- 当前结论
+- 最关键的依据和 trade-off
+- 建议的下一步
+- 会影响决策的未知项（如有）
+- 支撑重大外部结论的关键来源
 
-- `decision_status`: `provisional` / `validated` / `blocked_by_evidence`
-- `confidence_basis`: 当前结论为什么可信
-- `unresolved`: 仍缺什么证据
-- `change_my_mind_if`: 哪些新证据会改变当前判断
-
-规则：
-
-- 没有代表性 PoC、benchmark 或等价强证据时，具体技术优劣通常保持 `provisional`
-- 有关键证据缺口且缺口会改变行动时，用 `blocked_by_evidence`
-- `validated` 只用于关键假设已被项目证据和适用外部证据充分验证的情况
-- 不使用伪精确置信度百分比
-
-## 8. Freshness
-
-推荐具体第三方框架、库、平台、SaaS、数据库、基础设施产品或 AI SDK 时，若结论依赖其当前状态，优先核对官方一手来源：
-
-- active / archived
-- deprecated / sunset
-- renamed / migrated
-- current supported version
-- current official recommendation
-
-Catalog metadata 和项目历史文档均为时间点快照。
-
-## 9. Research Quality
-
-重大决策通常应覆盖：
-
-- 当前项目事实 / 测量
-- 候选技术官方一手资料
-- 成熟实现、生产案例或可靠交叉验证
-- 主要替代方案
-- 验证与回滚
-
-不要求固定来源数量。
-
-## 10. Quantitative Claims
-
-没有项目历史数据、PoC、等价 benchmark 或可解释计算依据时，不得把以下内容写成事实：
-
-- 工期 / 人周
-- 性能或效率提升百分比
-- 代码量或成本下降百分比
-- 资源体积变化
-- “解决 X% 问题”
-
-粗估必须标明为 heuristic estimate，并说明依据和不确定性。
-
-## 11. Weak Reasoning
-
-以下不能单独构成结论：
-
-- 更现代 / 更企业级
-- 以后可能需要
-- 大厂都在用
-- 高 Star
-- 模型记忆
-- 与当前场景不等价的 benchmark
-
-## 12. Output Contract
-
-重大决策默认按以下顺序组织，保持简洁：
-
-1. **结论**：一句话说明当前建议和 `decision_status`
-2. **为什么**：3–5 个最关键依据
-3. **怎么做**：现在做什么，暂时不做什么
-4. **还没确定**：只列会影响决策的关键证据缺口和 `change_my_mind_if`
-5. **关键参考**：只列真正支撑关键结论的来源，并说明支持什么
-
-不要把研究过程、来源枚举、长背景和所有候选细节默认倾倒给用户。需要深入时再展开。
+具体结构按问题选择，不要求固定模板，也不默认展示完整研究过程。
