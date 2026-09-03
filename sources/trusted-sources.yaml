@@ -1,0 +1,125 @@
+schema_version: 1
+verified_at: "2026-09-03"
+
+policy:
+  core_market_validation_stars: 30000
+  secondary_market_validation_stars: 10000
+  low_star_personal_repositories: "discovery_only"
+  official_exception: "Official standards, foundations, vendors and primary documentation may be core evidence regardless of GitHub stars."
+  major_decision_requires:
+    - project_local_evidence
+    - official_primary_source
+    - market_validated_reference_or_mature_implementation
+  notes:
+    - "Star count is an admission signal, not proof that a technology fits a project."
+    - "Archived, abandoned or materially outdated sources must be downgraded even if historically popular."
+    - "Do not copy a source's architecture without checking scenario equivalence."
+
+sources:
+  - id: awesome
+    repo: sindresorhus/awesome
+    url: https://github.com/sindresorhus/awesome
+    category: [discovery]
+    trust: core
+    stars_at_verification: 502491
+    use_for: "Find mature topic-specific Awesome lists before inventing a solution."
+    not_for: "Final architecture decisions."
+
+  - id: public-apis
+    repo: public-apis/public-apis
+    url: https://github.com/public-apis/public-apis
+    category: [build_vs_buy, api_discovery]
+    trust: core
+    stars_at_verification: 474714
+    use_for: "Check whether a usable public API already exists."
+    not_for: "Security or reliability guarantees of an individual API."
+
+  - id: awesome-selfhosted
+    repo: awesome-selfhosted/awesome-selfhosted
+    url: https://github.com/awesome-selfhosted/awesome-selfhosted
+    category: [build_vs_buy, self_hosted]
+    trust: core
+    stars_at_verification: 316821
+    use_for: "Check whether mature self-hosted software already solves the product need."
+    not_for: "Assuming every listed project is production-ready for the target workload."
+
+  - id: free-for-dev
+    repo: ripienaar/free-for-dev
+    url: https://github.com/ripienaar/free-for-dev
+    category: [build_vs_buy, managed_services]
+    trust: core
+    stars_at_verification: 136390
+    use_for: "Discover existing SaaS/PaaS/IaaS options before building infrastructure."
+    not_for: "Long-term pricing or SLA decisions without checking vendor primary sources."
+
+  - id: developer-roadmap
+    repo: nilbuild/developer-roadmap
+    url: https://github.com/nilbuild/developer-roadmap
+    category: [technology_map, learning, architecture]
+    trust: core
+    stars_at_verification: 366190
+    use_for: "Map an unfamiliar technology area and identify concepts that need deeper verification."
+    not_for: "Final project-specific architecture decisions."
+
+  - id: system-design-primer
+    repo: donnemartin/system-design-primer
+    url: https://github.com/donnemartin/system-design-primer
+    category: [system_design, tradeoffs]
+    trust: core
+    stars_at_verification: 367586
+    use_for: "Understand architecture trade-offs, scaling, caching, databases and distributed-system patterns."
+    not_for: "Treating interview-oriented examples as a drop-in production architecture."
+
+  - id: system-design-101
+    repo: ByteByteGoHq/system-design-101
+    url: https://github.com/ByteByteGoHq/system-design-101
+    category: [system_design, comparisons]
+    trust: core
+    stars_at_verification: 88041
+    use_for: "Quickly compare adjacent technologies and communication/system patterns."
+    not_for: "Replacing protocol or vendor primary documentation."
+
+  - id: awesome-scalability
+    repo: binhnguyennus/awesome-scalability
+    url: https://github.com/binhnguyennus/awesome-scalability
+    category: [production_patterns, scalability]
+    trust: core
+    stars_at_verification: 73688
+    use_for: "Find real production architecture and scalability case studies."
+    not_for: "Copying big-company architecture into a smaller system without evidence."
+
+  - id: system-design
+    repo: karanpratapsingh/system-design
+    url: https://github.com/karanpratapsingh/system-design
+    category: [system_design, cross_check]
+    trust: core
+    stars_at_verification: 45915
+    use_for: "Cross-check system-design concepts with a second mature source."
+    not_for: "Primary vendor-specific implementation details."
+
+  - id: realworld
+    repo: realworld-apps/realworld
+    url: https://github.com/realworld-apps/realworld
+    category: [framework_comparison, reference_implementation]
+    trust: core
+    stars_at_verification: 84182
+    use_for: "Compare different stacks implementing an equivalent non-trivial application."
+    not_for: "Assuming demo architecture matches a high-scale or domain-specific system."
+
+  - id: owasp-cheat-sheet-series
+    repo: OWASP/CheatSheetSeries
+    url: https://github.com/OWASP/CheatSheetSeries
+    category: [security]
+    trust: official
+    stars_at_verification: 33055
+    use_for: "Application-security design and implementation guidance."
+    not_for: "Replacing product-specific threat modeling."
+
+  - id: awesome-python
+    repo: vinta/awesome-python
+    url: https://github.com/vinta/awesome-python
+    category: [python, ecosystem_discovery]
+    trust: core
+    stars_at_verification: 317850
+    use_for: "Find mature Python libraries by capability before creating or adopting a dependency."
+    not_for: "Selecting a library solely because it appears in the list."
