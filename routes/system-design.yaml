@@ -1,0 +1,14 @@
+schema_version: 1
+route: system-design
+purpose: "Research system architecture and trade-offs using mature references."
+catalog_sources:
+  - id: system-design-primer
+  - id: system-design-101
+  - id: awesome-scalability
+  - id: system-design
+  - id: awesome-system-design
+also_research:
+  - candidate_technology_official_documentation
+  - relevant_protocol_or_standard
+  - comparable_mature_implementations
+note: "Research navigation only; no preferred architecture."
