@@ -8,16 +8,23 @@ policy:
     high: "GitHub stars >= 30000"
     medium: "GitHub stars >= 10000 and < 30000"
     low: "GitHub stars < 10000"
-    note: "Community adoption signal only; primary authority and relevance can outweigh stars."
+    note: "Community adoption / field-validation signal only. It does not measure standards or primary-source authority."
 
   evidence_classes:
     fresh_external: "Actually accessed and checked during the current decision."
     inherited_external: "External research summarized inside the target project's existing documents."
     model_knowledge: "Model memory or prior knowledge; useful for discovery, not current verification."
 
+  evidence_dimensions:
+    authority_evidence: "Standards and primary sources establish formal behavior, capability, status, and constraints."
+    field_evidence: "Mature implementations and production cases show real-world adoption, durability, and operating patterns."
+    project_evidence: "The target project's code, measurements, constraints, and authority determine local fit."
+
   rules:
     - "Use current primary sources when current technology status materially affects the conclusion."
-    - "Official or primary sources may outweigh community popularity."
+    - "Use field evidence when real-world adoption, maintainability, operational behavior, or long-term feasibility matters."
+    - "Authority evidence, field evidence, and project evidence are complementary; none automatically proves the final technology choice."
+    - "GitHub stars and popularity are field-validation signals for community projects, not authority scores."
     - "Discovery sources may find candidates but do not alone prove project fit."
     - "Implementation and production cases show patterns or feasibility; scenario fit still needs judgment."
     - "Do not present inherited_external or model_knowledge as fresh_external."
