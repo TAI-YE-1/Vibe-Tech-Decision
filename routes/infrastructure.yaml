@@ -3,6 +3,7 @@ route: infrastructure
 purpose: "Research deployment, cloud-native, orchestration, security, and platform infrastructure."
 
 catalog_sources:
+  - id: developer-roadmap
   - id: rfc-editor
   - id: google-sre-books
   - id: opentelemetry-specification
