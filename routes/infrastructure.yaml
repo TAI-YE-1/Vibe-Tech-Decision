@@ -6,12 +6,8 @@ catalog_sources:
   - id: rfc-editor
   - id: google-sre-books
   - id: opentelemetry-specification
-  - id: nist-ssdf
-  - id: slsa-specification
   - id: openssf-osps-baseline
   - id: cncf-landscape
-  - id: grafana
-  - id: kubernetes
 
 research:
   - current_deployment_and_operational_constraints
