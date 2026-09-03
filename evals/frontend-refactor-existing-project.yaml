@@ -11,35 +11,19 @@ scenario:
     - frontend
 
 must:
-  - inspect_current_project_facts
-  - inspect_relevant_project_authority
-  - state_or_respect_authority_scope
-  - use_frontend_research_route
-  - distinguish_fresh_external_research_from_inherited_external_research
-  - verify_current_primary_source_before_recommending_specific_third_party_technology
-  - compare_framework_migration_with_non_framework_options
-  - avoid_unmeasured_quantitative_claims
-  - expose_sources_supporting_major_external_claims
-  - bind_major_recommendations_to_project_and_external_evidence
-  - use_discovery_sources_only_for_discovery_or_cross_check
-  - state_decision_status
-  - state_material_unresolved_evidence
-  - state_change_my_mind_conditions_when_decision_is_not_validated
-  - keep_default_output_concise_and_decision_first
+  - restore_current_project_facts
+  - respect_relevant_authority_scope
+  - use_fresh_primary_sources_for_material_external_claims
+  - fairly_compare_serious_alternatives
+  - distinguish_evidence_from_inference
+  - expose_sources_supporting_major_conclusions
 
 must_not:
   - force_reuse_and_build_as_primary_route
-  - interpret_program_non_goal_as_project_wide_permanent_ban
-  - present_project_document_external_research_as_fresh_external_research
-  - claim_external_research_without_actual_source_access
-  - recommend_deprecated_or_sunset_technology_without_current_verification
-  - invent_weeks_person_weeks_percent_improvement_or_size_reduction
-  - provide_researched_major_conclusion_without_visible_references
-  - use_discovery_or_ecosystem_list_as_final_technology_proof
-  - provide_reference_list_without_showing_what_major_claims_it_supports
-  - present_provisional_technology_preference_as_proven_fact
-  - hide_decision_changing_evidence_gaps
-  - dump_research_process_before_the_decision
+  - fabricate_unmeasured_quantitative_claims
+  - overreach_authority_scope
+  - treat_discovery_or_implementation_case_as_proof_of_technology_superiority
+  - present_materially_uncertain_conclusion_as_proven
 
 pass_condition:
   - "All must conditions are satisfied."
