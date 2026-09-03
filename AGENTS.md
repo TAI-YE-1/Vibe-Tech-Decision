@@ -37,9 +37,12 @@ Project Authority 只在声明范围内生效。
 重要规则：
 
 - 没有对应 `fresh_external`，不得声称本轮已经外部验证
+- `authority evidence` 主要回答“技术/标准正式支持什么、当前状态是什么”
+- `field evidence` 主要回答“成熟项目和生产环境里实际怎么用、长期是否经受过验证”
+- `project evidence` 主要回答“这些能力和模式是否适合当前项目”
+- 三类证据互补，任何一类都不能自动推出最终技术选择；按问题重要性获取足够证据，不要求固定数量
+- Star / popularity 只作为 community adoption / field-validation 信号，不代表规范权威
 - 来源只支撑它能够证明的 claim；Discovery 来源不能单独证明技术适配
-- 具体技术的当前状态会影响结论时，优先检查当前官方一手来源
-- 成熟项目 / 生产案例可证明模式可行，但不能自动证明某技术对当前项目更优
 - 外部证据实质支持重大结论时，应让用户看到可复核来源
 
 ## 5. Decision Quality
