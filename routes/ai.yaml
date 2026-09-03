@@ -1,0 +1,12 @@
+schema_version: 1
+route: ai
+purpose: "Research AI architecture and tooling using current primary sources."
+catalog_sources:
+  - id: developer-roadmap
+  - id: awesome
+also_research:
+  - platform_official_documentation
+  - framework_official_repository
+  - mature_current_implementations
+  - current_project_evaluation_and_cost_evidence
+note: "Prefer current primary sources and project evidence."

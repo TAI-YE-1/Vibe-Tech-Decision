@@ -1,0 +1,14 @@
+schema_version: 1
+route: data
+purpose: "Research databases, storage, search, analytics, and data-platform choices."
+catalog_sources:
+  - id: system-design-primer
+  - id: system-design
+  - id: awesome-scalability
+  - id: developer-roadmap
+also_research:
+  - candidate_database_or_storage_official_documentation
+  - current_project_data_and_query_evidence
+  - benchmarks_matching_current_workload
+  - mature_projects_with_similar_data_patterns
+note: "Research navigation only; no storage model is prescribed."
