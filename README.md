@@ -4,31 +4,38 @@
 
 它不重新发明技术百科，也不替 AI 规定答案。它主要做两件事：
 
-1. 在新增较大能力前，先提醒 AI 判断：**现有能力、成熟开源、API、SaaS/PaaS 是否已经足够，是否真的需要新增开发。**
-2. 如果仍然需要开发，再把问题路由到经过筛选的高质量研究来源，让 AI 基于当前项目事实自主完成架构与技术判断。
+1. 先识别当前到底是在讨论新增能力、重构迁移、Bug、性能，还是技术选型。
+2. 再把问题路由到合适的研究路径和高质量来源，让 AI 基于当前项目事实自主判断。
 
 ## 顶层 Engineering Decision Flow
 
 ~~~
-需求出现
+用户问题
   ↓
 恢复当前项目事实
   ↓
-确认真正目标、约束和成功标准
-  ↓
-Need / Reuse / Buy / Integrate / Build
-  ├─ 当前项目已经能满足？
-  ├─ 组合或扩展现有能力即可？
-  ├─ 成熟开源 / Self-hosted 可复用？
-  ├─ 现成 API 可集成？
-  ├─ SaaS / PaaS 更合适？
-  └─ 自研 / 深度定制更合适？
-  ↓
-如果需要 Build / 深度集成
-  ↓
-Architecture / Technology Research
+Task Classification
+  ├─ new_capability
+  │    → Need / Reuse / Buy / Integrate / Build
+  │
+  ├─ refactor_or_migration
+  │    → Project Authority + scope
+  │    → 对应技术研究
+  │
+  ├─ bug
+  │    → 复现 / 根因
+  │    → 必要时升级架构研究
+  │
+  ├─ performance
+  │    → 测量瓶颈
+  │    → 必要时升级架构研究
+  │
+  └─ technology / security / infrastructure
+       → 对应 Research Route
   ↓
 官方一手资料 + Source Catalog + 成熟实现 / 生产案例
+  ↓
+区分 fresh_external / inherited_external / model_knowledge
   ↓
 AI 根据项目事实自主判断
   ↓
@@ -37,13 +44,15 @@ AI 根据项目事实自主判断
 实现并验证
 ~~~
 
-这不是死板流水线。明显属于核心自研能力、或约束已经排除外部方案时，AI 不需要为了流程形式而穷举所有产品；说明依据后可以直接进入 Build / Architecture。
-
 ## 仓库结构
 
 ### 过程规则
 
-- [AGENTS.md](AGENTS.md)：约束研究质量和证据方式，不规定技术答案。
+- [AGENTS.md](AGENTS.md)：研究真实性、Authority scope、来源 freshness、证据和验证要求。
+
+### Task Entry
+
+- [routes/task-entry.yaml](routes/task-entry.yaml)：先判断问题类型，避免所有问题都机械进入 Build-vs-Buy。
 
 ### Source Catalog
 
@@ -57,8 +66,6 @@ Research Route 只负责：
 
 > **“这个问题应该优先去哪几类来源研究？”**
 
-它不写 Redis、SSE、React、Agent 等具体技术的自创判断规则。
-
 - [Reuse / Buy / Integrate / Build](routes/reuse-and-build.yaml)
 - [System Design](routes/system-design.yaml)
 - [Frontend](routes/frontend.yaml)
@@ -66,6 +73,12 @@ Research Route 只负责：
 - [Data](routes/data.yaml)
 - [AI](routes/ai.yaml)
 - [Infrastructure](routes/infrastructure.yaml)
+
+### Evals
+
+- [Frontend Refactor Existing Project](evals/frontend-refactor-existing-project.yaml)
+
+Evals 用真实问题检查模型是否真的执行了研究流程，而不是只复述方法论名称。
 
 ### ADR
 
@@ -75,16 +88,12 @@ Research Route 只负责：
 
 来源不是自动灌入上下文。
 
-AI 应按当前问题选择少量最相关来源。例如：
+AI 应按当前问题选择少量最相关来源，并区分：
 
-- 新增一个较大的产品能力 → 先走 `reuse-and-build`
-- 确认需要自研，而且涉及缓存/通信/扩展性 → `system-design`
-- 前端框架或架构问题 → `frontend`
-- Python / Node.js / Go / Rust 后端生态 → `backend`
-- 数据库 / 存储问题 → `data`
-- RAG / Agent / Model / AI 工程 → `ai`
-- Kubernetes / Cloud Native / 平台基础设施 → `infrastructure`
+- `fresh_external`：本轮实际访问并验证
+- `inherited_external`：目标项目文档以前已经研究过
+- `model_knowledge`：模型已有知识
 
-Route 只是研究导航。最终判断仍来自：
+项目内部 ADR 对外部项目的总结不能自动冒充本轮 fresh research。
 
-> 当前项目事实 + 官方一手资料 + 相关成熟证据 + AI 自主推理
+推荐具体第三方技术时，如果结论依赖其当前状态，应重新检查官方一手来源。
