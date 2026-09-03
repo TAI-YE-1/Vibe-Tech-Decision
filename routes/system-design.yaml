@@ -5,11 +5,8 @@ purpose: "Research system architecture and trade-offs."
 catalog_sources:
   - id: rfc-editor
   - id: google-sre-books
-  - id: opentelemetry-specification
   - id: system-design-primer
   - id: awesome-scalability
-  - id: grafana
-  - id: kubernetes
 
 research:
   - candidate_primary_sources
