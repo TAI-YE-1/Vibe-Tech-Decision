@@ -4,9 +4,7 @@ purpose: "Research databases, storage, search, analytics, and data-platform choi
 
 catalog_sources:
   - id: system-design-primer
-  - id: system-design
   - id: awesome-scalability
-  - id: developer-roadmap
 
 research:
   - current_project_data_and_query_evidence
