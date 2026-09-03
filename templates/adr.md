@@ -2,6 +2,7 @@
 
 - 状态：Proposed
 - 日期：YYYY-MM-DD
+- decision_status：provisional | validated | blocked_by_evidence
 
 ## Context
 
@@ -34,6 +35,12 @@
 ## Decision
 
 选择什么，以及关键事实和 trade-off。
+
+## Decision Confidence
+
+- confidence_basis：
+- unresolved：
+- change_my_mind_if：
 
 ## Decision Evidence Map
 
