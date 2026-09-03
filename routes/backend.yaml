@@ -3,6 +3,7 @@ route: backend
 purpose: "Research backend languages, frameworks, libraries, and engineering practices."
 
 catalog_sources:
+  - id: developer-roadmap
   - id: awesome
   - id: owasp-cheat-sheet-series
   - id: owasp-asvs

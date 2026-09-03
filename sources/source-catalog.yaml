@@ -44,6 +44,18 @@ sources:
     use_for: "Discover domain-specific curated lists and candidate ecosystems."
     limitations: "Not architecture evidence by itself."
 
+  - id: developer-roadmap
+    repo: nilbuild/developer-roadmap
+    url: https://roadmap.sh/
+    categories: [concept_map, engineering_domains, research_orientation]
+    authority: community
+    market_validation: high
+    stars_at_verification: 366213
+    last_repo_activity_at: "2026-09-03"
+    evidence_role: concept_map
+    use_for: "Map a domain's important topics, practices, and adjacent areas before deeper research."
+    limitations: "Orientation only; does not prove project fit or select a technology."
+
   - id: public-apis
     repo: public-apis/public-apis
     url: https://github.com/public-apis/public-apis

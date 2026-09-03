@@ -3,6 +3,7 @@ route: system-design
 purpose: "Research system architecture and trade-offs."
 
 catalog_sources:
+  - id: developer-roadmap
   - id: rfc-editor
   - id: google-sre-books
   - id: system-design-primer
