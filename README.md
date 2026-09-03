@@ -1,36 +1,34 @@
 # Vibe-Tech-Decision
 
-一个面向 Vibe Coding 的**技术决策辅助库**。
+一个面向 Vibe Coding 的**工程决策辅助仓库**。
 
-它不试图重新写技术百科，也不替代官方文档，更不试图替 AI 规定答案。
+它不重新发明技术百科，也不替 AI 规定答案。它主要做两件事：
 
-> 目标：给 AI 更好的问题框架、研究起点和验证要求，让强模型能够基于当前项目事实自主判断，而不是临场猜测或机械套规则。
+1. 在新增较大能力前，先提醒 AI 判断：**现有能力、成熟开源、API、SaaS/PaaS 是否已经足够，是否真的需要新增开发。**
+2. 如果仍然需要开发，再把问题路由到经过筛选的高质量研究来源，让 AI 基于当前项目事实自主完成架构与技术判断。
 
-## 核心原则
-
-1. **项目事实优先**：当前代码、运行数据、约束和已有架构优先于本仓库的一般经验。
-2. **决策卡是提示，不是答案**：用于防止漏掉关键维度，不规定 PostgreSQL、Redis、SSE、React、Agent 等技术必须用或不能用。
-3. **来源目录不是白名单**：它提供高质量研究起点，AI 可以主动发现更相关的新来源。
-4. **多维评估来源**：官方性、市场验证、维护状态、与当前问题的相关性要分开看；Star 只反映市场验证的一部分。
-5. **重大判断要可解释、可验证**：说明事实、假设、候选、trade-off、证据和验证方法。
-6. **允许偏离启发式**：如果当前项目证据支持更不同或更复杂的方案，AI 应明确说明理由并采用更合适的方案。
-
-## 推荐工作流
+## 顶层 Engineering Decision Flow
 
 ~~~
-需求
+需求出现
   ↓
 恢复当前项目事实
   ↓
-明确问题、约束和成功标准
+确认真正目标、约束和成功标准
   ↓
-读取相关 decision lens，检查是否遗漏关键维度
+Need / Reuse / Buy / Integrate / Build
+  ├─ 当前项目已经能满足？
+  ├─ 组合或扩展现有能力即可？
+  ├─ 成熟开源 / Self-hosted 可复用？
+  ├─ 现成 API 可集成？
+  ├─ SaaS / PaaS 更合适？
+  └─ 自研 / 深度定制更合适？
   ↓
-主动发现候选方案（包括复用、自研、现有技术、新技术）
+如果需要 Build / 深度集成
   ↓
-查询官方一手资料 + source catalog + 更相关的新来源
+Architecture / Technology Research
   ↓
-比较 trade-off、成本、风险、迁移/退出路径
+官方一手资料 + Source Catalog + 成熟实现 / 生产案例
   ↓
 AI 根据项目事实自主判断
   ↓
@@ -39,52 +37,68 @@ AI 根据项目事实自主判断
 实现并验证
 ~~~
 
-这个流程不是固定流水线。简单问题可以缩短；复杂或高风险问题应增加研究深度。
+这不是死板流水线。明显属于核心自研能力、或约束已经排除外部方案时，AI 不需要为了流程形式而穷举所有产品；说明依据后可以直接进入 Build / Architecture。
 
-## 第一版内容
+## 仓库结构
 
-### Decision lenses
+### 过程规则
 
-- [Build vs Buy / Reuse](decisions/build-vs-buy.md)
-- [前端框架与前端架构](decisions/frontend-framework.md)
-- [数据库与数据存储](decisions/database.md)
-- [实时通信](decisions/realtime.md)
-- [缓存](decisions/cache.md)
-- [AI / RAG / Agent 架构](decisions/ai-architecture.md)
+- [AGENTS.md](AGENTS.md)：约束研究质量和证据方式，不规定技术答案。
 
-### Source catalog
+### Source Catalog
 
-见 [sources/source-catalog.yaml](sources/source-catalog.yaml)。
+- [sources/source-catalog.yaml](sources/source-catalog.yaml)：经过筛选的高质量研究起点。
 
-它记录的是已经筛选过的研究入口及其不同质量信号，而不是“允许使用的唯一来源”。
+Source Catalog 不是白名单。AI 可以使用更直接、更相关、更新的一手资料。
 
-### 模板
+### Research Routes
 
-- [Decision lens 模板](templates/decision-card.md)
+Research Route 只负责：
+
+> **“这个问题应该优先去哪几类来源研究？”**
+
+它不写 Redis、SSE、React、Agent 等具体技术的自创判断规则。
+
+- [Reuse / Buy / Integrate / Build](routes/reuse-and-build.yaml)
+- [System Design](routes/system-design.yaml)
+- [Frontend](routes/frontend.yaml)
+- [Backend](routes/backend.yaml)
+- [Data](routes/data.yaml)
+- [AI](routes/ai.yaml)
+- [Infrastructure](routes/infrastructure.yaml)
+
+### ADR
+
 - [ADR 模板](templates/adr.md)
 
-## 给 AI 使用
+## 来源在什么时候起效
 
-本仓库的过程规则在 [AGENTS.md](AGENTS.md)。
+来源不是自动灌入上下文。
 
-在其他项目做重大技术判断时，可优先读取：
+AI 应按当前问题选择少量最相关来源。例如：
 
-1. 目标项目自己的治理文件、代码、测试和运行证据
-2. 本仓库的 `AGENTS.md`
-3. 与问题对应的 `decisions/*.md`
-4. `sources/source-catalog.yaml`
-5. 针对当前问题主动发现的官方资料、成熟项目和更相关证据
+- 新增一个较大的产品能力 → 先走 `reuse-and-build`
+- 确认需要自研，而且涉及缓存/通信/扩展性 → `system-design`
+- 前端框架或架构问题 → `frontend`
+- Python / Node.js / Go / Rust 后端生态 → `backend`
+- 数据库 / 存储问题 → `data`
+- RAG / Agent / Model / AI 工程 → `ai`
+- Kubernetes / Cloud Native / 平台基础设施 → `infrastructure`
 
-**不要因为来源不在 catalog 中就忽略它，也不要因为来源在 catalog 中就自动相信其结论。**
+Route 只是研究导航。最终判断仍来自：
+
+> 当前项目事实 + 官方一手资料 + 相关成熟证据 + AI 自主推理
 
 ## 第一版刻意不做
 
+- 自创技术选型规则
+- Decision Lens / 技术判断卡
+- 固定技术栈 policy
+- 自动根据 Star 选技术
+- 自动 trust score
 - Web UI
 - 数据库
-- MCP Server
-- RAG / 向量数据库
-- 自动生成技术结论
-- 自动按 Star 或固定规则选技术
-- 把 decision lens 当成 policy engine
+- MCP
+- RAG / Vector DB
 
-先验证这套结构是否真的提高技术判断质量，再决定是否工具化。
+先验证“**先避免重复造轮子，再做高质量技术研究**”这条主流程是否真正有帮助。
