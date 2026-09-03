@@ -1,68 +1,28 @@
 schema_version: 2
 verified_at: "2026-09-03"
 
-# This catalog is a curated research starting point, not an allow-list
-# and not a numerical trust ranking.
 policy:
-  purpose: "Provide high-quality research starting points without constraining model autonomy."
+  purpose: "Provide useful research starting points without constraining model autonomy."
+
   market_validation_heuristic:
     high: "GitHub stars >= 30000"
     medium: "GitHub stars >= 10000 and < 30000"
     low: "GitHub stars < 10000"
-    note: "These thresholds are project heuristics, not industry standards."
-  source_evaluation_dimensions:
-    - authority
-    - market_validation
-    - recency
-    - relevance_to_current_problem
-    - evidence_role
-  freshness:
-    catalog_metadata_is_snapshot: true
-    inherited_project_research_counts_as_fresh: false
-    before_recommending_specific_third_party_technology:
-      prefer_current_primary_source_check: true
-      check_for:
-        - active_or_archived
-        - deprecated_or_sunset
-        - renamed_or_migrated
-        - current_supported_version
-        - current_official_recommendation
+    note: "Community adoption signal only; primary authority and relevance can outweigh stars."
+
   evidence_classes:
     fresh_external: "Actually accessed and checked during the current decision."
     inherited_external: "External research summarized inside the target project's existing documents."
-    model_knowledge: "Model memory or general prior knowledge; useful for discovery, not proof of current verification."
-  evidence_role_semantics:
-    discovery:
-      purpose: "Find candidate technologies, products, APIs, projects, or further sources."
-      may_support_final_recommendation_alone: false
-    primary_fact:
-      purpose: "Verify current technology capabilities, official status, versions, constraints, or standards."
-      preferred_sources: [official_documentation, official_repository, standard, rfc]
-    comparison:
-      purpose: "Compare adjacent technologies or architectural trade-offs."
-      may_require_primary_verification: true
-    implementation_or_case:
-      purpose: "Show how a mature system implements or operates a relevant pattern."
-      requires_scenario_fit_check: true
-    methodology:
-      purpose: "Structure the decision process or maturity discussion."
-      may_support_specific_technology_fit_alone: false
-  conclusion_binding:
-    visible_references_for_major_external_claims: true
-    bind_sources_to_supported_claims: true
-    bibliography_without_claim_mapping_is_insufficient: true
+    model_knowledge: "Model memory or prior knowledge; useful for discovery, not current verification."
+
   rules:
-    - "Do not convert these dimensions into a single trust score."
-    - "Official or primary sources may be decisive regardless of stars."
-    - "High-star community sources are strong discovery/cross-check signals, not automatic conclusions."
-    - "Low-star personal repositories are normally discovery leads, unless they are themselves the primary/official source for the technology being evaluated."
-    - "Archived or materially outdated sources should be treated cautiously even if historically popular."
-    - "The model may use sources not present in this catalog when they are more direct, current, or relevant."
-    - "Catalog metadata does not prove a source is still current at recommendation time."
-    - "Do not present inherited_external or model_knowledge as fresh_external research."
-    - "Discovery and ecosystem-list sources may discover candidates but must not alone justify a final technology recommendation."
-    - "A source must only be used for claims within its evidence role and documented limitations."
-    - "When external evidence materially supports a major conclusion, surface user-visible references tied to that conclusion."
+    - "Use current primary sources when current technology status materially affects the conclusion."
+    - "Official or primary sources may outweigh community popularity."
+    - "Discovery sources may find candidates but do not alone prove project fit."
+    - "Implementation and production cases show patterns or feasibility; scenario fit still needs judgment."
+    - "Do not present inherited_external or model_knowledge as fresh_external."
+    - "External evidence that materially supports a major conclusion should be visible to the user."
+    - "Sources outside this catalog may be used when they are more direct, current, or relevant."
 
 sources:
   - id: awesome
