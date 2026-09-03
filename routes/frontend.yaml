@@ -6,12 +6,6 @@ catalog_sources:
   - id: whatwg-html
   - id: mdn-web-docs
   - id: w3c-web-performance
-  - id: realworld
-  - id: excalidraw
-  - id: tldraw
-  - id: affine
-  - id: awesome-react
-  - id: awesome-vue
 
 research:
   - current_project_frontend_facts
