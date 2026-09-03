@@ -1,30 +1,18 @@
 schema_version: 1
 route: frontend
 purpose: "Research frontend framework, ecosystem, migration, and application architecture."
+
 catalog_sources:
   - id: developer-roadmap
   - id: realworld
   - id: awesome-react
   - id: awesome-vue
   - id: bulletproof-react
-also_research:
-  - candidate_framework_official_documentation
-  - candidate_framework_migration_guides
-  - mature_projects_similar_to_target_product
-  - current_project_frontend_authority_and_scope
-evidence_expectations:
-  - "Use project facts and scoped Project Authority for the current architecture and migration constraints."
-  - "Use official candidate documentation for current framework capabilities, support, and migration facts."
-  - "Use comparable mature implementations or cases for architecture patterns when relevant."
-  - "Ecosystem and discovery lists may find candidates but cannot alone justify a framework choice."
-output_requirements:
-  - "For major frontend conclusions, expose the references that materially support them."
-  - "Bind references to specific claims such as migration feasibility, current framework capability, or comparable implementation evidence."
-specific_recommendation_check:
-  required_when: "The answer recommends a named third-party framework, library, UI kit, or frontend platform."
-  verify:
-    - current_official_status
-    - deprecation_or_sunset
-    - current_supported_version
-    - migration_or_successor_guidance
-note: "Research navigation only; catalog membership does not imply suitability."
+
+research:
+  - current_project_frontend_facts
+  - relevant_project_authority
+  - candidate_primary_sources
+  - comparable_implementations_when_useful
+
+current_status_check: "Use current primary sources when a candidate's present status materially affects the conclusion."
