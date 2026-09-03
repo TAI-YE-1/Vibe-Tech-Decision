@@ -3,12 +3,9 @@ route: backend
 purpose: "Research backend languages, frameworks, libraries, and engineering practices."
 
 catalog_sources:
-  - id: awesome-python
-  - id: awesome-nodejs
-  - id: awesome-go
-  - id: awesome-rust
-  - id: node-best-practices
-  - id: developer-roadmap
+  - id: awesome
+  - id: owasp-cheat-sheet-series
+  - id: owasp-asvs
 
 research:
   - candidate_primary_sources
