@@ -14,18 +14,31 @@ project_evidence:
 external_evidence:
   fresh_external:
     - source: null
+      evidence_role: null
       checked: null
       supports: null
       limitations: null
 
   inherited_external:
     - source: null
+      evidence_role: null
       inherited_from: null
       supports: null
 
   model_knowledge:
     - claim: null
       verification_needed: null
+
+conclusion_bindings:
+  - conclusion: null
+    project_evidence: []
+    fresh_external_sources: []
+    inherited_external_sources: []
+    inference: null
+
+user_visible_references:
+  - source: null
+    supports_conclusion: null
 
 specific_technology_checks:
   - technology: null
@@ -42,5 +55,6 @@ unknowns: []
 
 note: >
   This trace is evidence bookkeeping. It does not need to be shown verbatim to
-  the user unless useful, but claims of fresh external research must be
-  supported by entries in fresh_external.
+  the user. For major decisions, external evidence that materially supports a
+  conclusion should be surfaced to the user and tied to the conclusion it
+  supports. Discovery sources alone do not prove technology fit.
