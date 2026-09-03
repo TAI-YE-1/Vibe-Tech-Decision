@@ -22,6 +22,10 @@ must:
   - expose_sources_supporting_major_external_claims
   - bind_major_recommendations_to_project_and_external_evidence
   - use_discovery_sources_only_for_discovery_or_cross_check
+  - state_decision_status
+  - state_material_unresolved_evidence
+  - state_change_my_mind_conditions_when_decision_is_not_validated
+  - keep_default_output_concise_and_decision_first
 
 must_not:
   - force_reuse_and_build_as_primary_route
@@ -33,6 +37,9 @@ must_not:
   - provide_researched_major_conclusion_without_visible_references
   - use_discovery_or_ecosystem_list_as_final_technology_proof
   - provide_reference_list_without_showing_what_major_claims_it_supports
+  - present_provisional_technology_preference_as_proven_fact
+  - hide_decision_changing_evidence_gaps
+  - dump_research_process_before_the_decision
 
 pass_condition:
   - "All must conditions are satisfied."

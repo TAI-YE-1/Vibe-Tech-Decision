@@ -66,7 +66,25 @@ Discovery 来源不能单独支撑最终技术推荐。
 - 来源应说明支持哪条关键结论
 - 推论必须标明为推论，不得伪装成来源原文结论
 
-## 7. Freshness
+## 7. Decision Confidence
+
+不要把“当前最合理”写成“已经证明正确”。
+
+重大决策应给出：
+
+- `decision_status`: `provisional` / `validated` / `blocked_by_evidence`
+- `confidence_basis`: 当前结论为什么可信
+- `unresolved`: 仍缺什么证据
+- `change_my_mind_if`: 哪些新证据会改变当前判断
+
+规则：
+
+- 没有代表性 PoC、benchmark 或等价强证据时，具体技术优劣通常保持 `provisional`
+- 有关键证据缺口且缺口会改变行动时，用 `blocked_by_evidence`
+- `validated` 只用于关键假设已被项目证据和适用外部证据充分验证的情况
+- 不使用伪精确置信度百分比
+
+## 8. Freshness
 
 推荐具体第三方框架、库、平台、SaaS、数据库、基础设施产品或 AI SDK 时，若结论依赖其当前状态，优先核对官方一手来源：
 
@@ -78,7 +96,7 @@ Discovery 来源不能单独支撑最终技术推荐。
 
 Catalog metadata 和项目历史文档均为时间点快照。
 
-## 8. Research Quality
+## 9. Research Quality
 
 重大决策通常应覆盖：
 
@@ -90,7 +108,7 @@ Catalog metadata 和项目历史文档均为时间点快照。
 
 不要求固定来源数量。
 
-## 9. Quantitative Claims
+## 10. Quantitative Claims
 
 没有项目历史数据、PoC、等价 benchmark 或可解释计算依据时，不得把以下内容写成事实：
 
@@ -102,7 +120,7 @@ Catalog metadata 和项目历史文档均为时间点快照。
 
 粗估必须标明为 heuristic estimate，并说明依据和不确定性。
 
-## 10. Weak Reasoning
+## 11. Weak Reasoning
 
 以下不能单独构成结论：
 
@@ -113,18 +131,14 @@ Catalog metadata 和项目历史文档均为时间点快照。
 - 模型记忆
 - 与当前场景不等价的 benchmark
 
-## 11. Output
+## 12. Output Contract
 
-复杂判断应能区分：
+重大决策默认按以下顺序组织，保持简洁：
 
-- facts
-- assumptions / unknowns
-- candidates / trade-offs
-- recommendation
-- fresh external evidence
-- inherited external evidence
-- conclusion-to-evidence mapping
-- visible references
-- verification / rollback
+1. **结论**：一句话说明当前建议和 `decision_status`
+2. **为什么**：3–5 个最关键依据
+3. **怎么做**：现在做什么，暂时不做什么
+4. **还没确定**：只列会影响决策的关键证据缺口和 `change_my_mind_if`
+5. **关键参考**：只列真正支撑关键结论的来源，并说明支持什么
 
-不要求机械套模板。
+不要把研究过程、来源枚举、长背景和所有候选细节默认倾倒给用户。需要深入时再展开。
