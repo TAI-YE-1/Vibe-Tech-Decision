@@ -1,0 +1,50 @@
+schema_version: 1
+route: task-entry
+purpose: "Classify the engineering question before selecting a research route."
+
+task_types:
+  new_capability:
+    first:
+      - current_project_facts
+      - reuse-and-build
+    then:
+      - relevant_domain_route
+
+  refactor_or_migration:
+    first:
+      - current_project_facts
+      - project_authority_and_scope
+    then:
+      - relevant_domain_route
+    reuse_check: optional
+
+  bug:
+    first:
+      - reproduce
+      - local_root_cause
+    architecture_research:
+      only_if: local_evidence_requires_it
+
+  performance:
+    first:
+      - measure_current_bottleneck
+    architecture_research:
+      only_if: measured_evidence_requires_it
+
+  technology_selection:
+    first:
+      - current_project_facts
+    then:
+      - relevant_domain_route
+
+  security_or_infrastructure:
+    first:
+      - current_project_facts
+      - relevant_project_authority
+    then:
+      - relevant_domain_route
+
+rules:
+  - "Do not force reuse-and-build onto refactor, bug, or performance questions."
+  - "Do not escalate a local defect into an architecture decision without evidence."
+  - "Task classification is routing guidance, not a technology conclusion."
