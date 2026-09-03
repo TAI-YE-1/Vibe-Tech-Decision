@@ -11,4 +11,12 @@ also_research:
   - candidate_framework_official_documentation
   - candidate_framework_migration_guides
   - mature_projects_similar_to_target_product
+  - current_project_frontend_authority_and_scope
+specific_recommendation_check:
+  required_when: "The answer recommends a named third-party framework, library, UI kit, or frontend platform."
+  verify:
+    - current_official_status
+    - deprecation_or_sunset
+    - current_supported_version
+    - migration_or_successor_guidance
 note: "Research navigation only; catalog membership does not imply suitability."

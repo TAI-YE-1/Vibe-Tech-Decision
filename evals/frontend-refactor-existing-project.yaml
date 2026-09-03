@@ -1,0 +1,33 @@
+schema_version: 1
+id: frontend-refactor-existing-project
+
+scenario:
+  prompt: >
+    An existing project uses traditional CSS, JavaScript, and HTML. Development
+    is becoming difficult and the UI quality is poor. The user is considering
+    whether the frontend architecture should change.
+  expected_task_type: refactor_or_migration
+  expected_routes:
+    - frontend
+
+must:
+  - inspect_current_project_facts
+  - inspect_relevant_project_authority
+  - state_or_respect_authority_scope
+  - use_frontend_research_route
+  - distinguish_fresh_external_research_from_inherited_external_research
+  - verify_current_primary_source_before_recommending_specific_third_party_technology
+  - compare_framework_migration_with_non_framework_options
+  - avoid_unmeasured_quantitative_claims
+
+must_not:
+  - force_reuse_and_build_as_primary_route
+  - interpret_program_non_goal_as_project_wide_permanent_ban
+  - present_project_document_external_research_as_fresh_external_research
+  - claim_external_research_without_actual_source_access
+  - recommend_deprecated_or_sunset_technology_without_current_verification
+  - invent_weeks_person_weeks_percent_improvement_or_size_reduction
+
+pass_condition:
+  - "All must conditions are satisfied."
+  - "No must_not condition is violated."

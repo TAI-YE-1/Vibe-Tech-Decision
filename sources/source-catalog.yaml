@@ -16,6 +16,21 @@ policy:
     - recency
     - relevance_to_current_problem
     - evidence_role
+  freshness:
+    catalog_metadata_is_snapshot: true
+    inherited_project_research_counts_as_fresh: false
+    before_recommending_specific_third_party_technology:
+      prefer_current_primary_source_check: true
+      check_for:
+        - active_or_archived
+        - deprecated_or_sunset
+        - renamed_or_migrated
+        - current_supported_version
+        - current_official_recommendation
+  evidence_classes:
+    fresh_external: "Actually accessed and checked during the current decision."
+    inherited_external: "External research summarized inside the target project's existing documents."
+    model_knowledge: "Model memory or general prior knowledge; useful for discovery, not proof of current verification."
   rules:
     - "Do not convert these dimensions into a single trust score."
     - "Official or primary sources may be decisive regardless of stars."
@@ -23,6 +38,8 @@ policy:
     - "Low-star personal repositories are normally discovery leads, unless they are themselves the primary/official source for the technology being evaluated."
     - "Archived or materially outdated sources should be treated cautiously even if historically popular."
     - "The model may use sources not present in this catalog when they are more direct, current, or relevant."
+    - "Catalog metadata does not prove a source is still current at recommendation time."
+    - "Do not present inherited_external or model_knowledge as fresh_external research."
 
 sources:
   - id: awesome

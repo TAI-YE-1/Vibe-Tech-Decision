@@ -1,0 +1,46 @@
+schema_version: 1
+
+task:
+  type: null
+  routes_used: []
+
+project_evidence:
+  facts: []
+  authority:
+    - source: null
+      scope: null
+      applies_to_current_question: null
+
+external_evidence:
+  fresh_external:
+    - source: null
+      checked: null
+      supports: null
+      limitations: null
+
+  inherited_external:
+    - source: null
+      inherited_from: null
+      supports: null
+
+  model_knowledge:
+    - claim: null
+      verification_needed: null
+
+specific_technology_checks:
+  - technology: null
+    official_status_checked: null
+    deprecation_or_sunset_checked: null
+    current_version_or_successor_checked: null
+
+quantitative_claims:
+  - claim: null
+    basis: null
+    confidence: null
+
+unknowns: []
+
+note: >
+  This trace is evidence bookkeeping. It does not need to be shown verbatim to
+  the user unless useful, but claims of fresh external research must be
+  supported by entries in fresh_external.
