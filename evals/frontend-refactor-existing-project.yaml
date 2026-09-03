@@ -19,6 +19,9 @@ must:
   - verify_current_primary_source_before_recommending_specific_third_party_technology
   - compare_framework_migration_with_non_framework_options
   - avoid_unmeasured_quantitative_claims
+  - expose_sources_supporting_major_external_claims
+  - bind_major_recommendations_to_project_and_external_evidence
+  - use_discovery_sources_only_for_discovery_or_cross_check
 
 must_not:
   - force_reuse_and_build_as_primary_route
@@ -27,6 +30,9 @@ must_not:
   - claim_external_research_without_actual_source_access
   - recommend_deprecated_or_sunset_technology_without_current_verification
   - invent_weeks_person_weeks_percent_improvement_or_size_reduction
+  - provide_researched_major_conclusion_without_visible_references
+  - use_discovery_or_ecosystem_list_as_final_technology_proof
+  - provide_reference_list_without_showing_what_major_claims_it_supports
 
 pass_condition:
   - "All must conditions are satisfied."
